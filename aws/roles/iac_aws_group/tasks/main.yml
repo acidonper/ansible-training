@@ -1,0 +1,18 @@
+---
+# tasks file for roles/aws
+#
+- name: "Fail when a mandatory extra vars are not defined"
+  fail:
+    msg: "AWS neccesary variable is not included"
+  when:
+    - project is not defined
+    - action is not defined
+    - secgroup is not defined
+
+- block:
+    - import_tasks: add-secgroup.yml
+  when: action == "add"
+
+- block:
+    - import_tasks: delete-secgroup.yml
+  when: action == "delete"

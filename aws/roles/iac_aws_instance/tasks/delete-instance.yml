@@ -1,0 +1,16 @@
+- debug:
+    msg: "Deleting {{ instance }} Instance..."
+
+
+- name: "Obtain instance ID"
+  ec2_instance_facts:
+    filters:
+      "tag:Name": "{{ instance }}"
+      "tag:project": "{{ project }}"
+  register: instance_tags
+
+- name: "Deleting EC2 instances"
+  ec2_instance:
+    state: absent
+    instance_ids:
+      - "{{ instance_tags.instances[0].instance_id }}"

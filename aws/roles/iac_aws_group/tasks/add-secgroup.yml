@@ -1,0 +1,20 @@
+- debug:
+    msg: "Creating {{ secgroup }} Security Group..."
+
+- name: "Fail when a mandatory extra vars are not defined"
+  fail:
+    msg: "AWS neccesary variable is not included"
+  when:
+    - vpc_id is not defined
+
+- name: "Create security group"
+  ec2_group:
+    state: present
+    name: "{{ secgroup }}"
+    tags:
+      Name: "{{ secgroup }}"
+      project: "{{ project }}"
+    description: "{{ description }}"
+    vpc_id: "{{ vpc_id }}"
+    rules: "{{ rules }}"
+    validate_certs: no

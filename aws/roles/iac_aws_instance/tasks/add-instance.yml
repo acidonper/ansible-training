@@ -1,0 +1,40 @@
+- debug:
+    msg: "Creating {{ instance }} Instance..."
+
+- name: "Fail when a mandatory extra vars are not defined"
+  fail:
+    msg: "AWS neccesary variable is not included"
+  when:
+    - subnet is not defined
+    - image_id is not defined
+
+- name: "Obtain Subnet ID"
+  ec2_vpc_subnet_facts:
+    filters:
+      "tag:Name": "{{ subnet }}"
+      "tag:project": "{{ project }}"
+  register: subnet_tags
+
+- name: "Search if {{ instance }} instance exits"
+  ec2_instance_facts:
+    filters:
+      "tag:Name": "{{ instance }}"
+      "tag:project": "{{ project }}"
+  register: instance_tags
+
+- name: "Creating EC2 instances"
+  ec2_instance:
+    instance_type: "{{ instance_type }}"
+    image_id: "{{ image_id }}"
+    vpc_subnet_id: "{{ subnet_tags.subnets[0].subnet_id }}"
+    security_groups: "{{ security_groups }}"
+    key_name: "{{ key_name }}"
+    name: "{{ instance }}"
+    tags:
+      Name: "{{ instance }}"
+      project: "{{ project_id }}"
+    validate_certs: no
+    wait: "{{ wait }}"
+    network:
+      assign_public_ip: true
+  when: instance_tags.instances[0] is not defined

@@ -1,0 +1,8 @@
+---
+# defaults file for roles/aws
+
+security_groups:
+  - default
+
+instance_type: t2.micro
+wait: "no"

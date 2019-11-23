@@ -1,0 +1,20 @@
+- debug:
+    msg: "Creating {{ subnet }} Subnet..."
+
+- name: "Fail when a mandatory extra vars are not defined"
+  fail:
+    msg: "AWS neccesary variable is not included"
+  when:
+    - cidr is not defined
+    - az is not defined
+
+- name: Create subnets
+  ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc_id }}"
+    cidr: "{{ cidr }}"
+    az: "{{ az }}"
+    resource_tags:
+      Name: "{{ subnet }}"
+      project: "{{ project }}"
+    validate_certs: no

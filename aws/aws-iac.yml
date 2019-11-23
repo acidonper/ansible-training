@@ -1,0 +1,127 @@
+- hosts: localhost
+  connection: local
+
+  vars:
+    environment: "{{ ENV | default('preproduction')}}"
+    version: "{{ VER | default('latest') }}"
+    defined_groups: []
+    defined_subnets: []
+    defined_instances: []
+
+  vars_files:
+    - "./vars/aws-{{ environment }}-{{ version }}.yml"
+
+  tasks:
+
+    - name: Collect EC2 instances in data structures
+      set_fact:
+        defined_instances: "{{ defined_instances }} + [ '{{ item.name }}' ]"
+      loop: "{{ instances }}"
+
+    - name: Collect current EC2 instances on AWS
+      ec2_instance_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_instances
+
+    - name: Deleting EC2 instances on AWS
+      include_role:
+        name: iac_aws_instance
+      vars:
+        action: delete
+        instance: "{{ item.tags.Name }}"
+        project: "{{ project_id }}"
+      loop: "{{ current_instances.instances }}"
+      when:
+        - item.tags.Name not in defined_instances
+
+
+    - name: Collect EC2 security groups in data structures
+      set_fact:
+        defined_groups: "{{ defined_groups }} + [ '{{ item.name }}' ]"
+      loop: "{{ security_groups }}"
+
+    - name: Collect current EC2 security groups on AWS
+      ec2_group_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_groups
+
+    - name: Deleting EC2 security groups on AWS
+      include_role:
+        name: iac_aws_group
+      vars:
+        action: delete
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        secgroup: "{{ item.tags.Name }}"
+      loop: "{{ current_groups.security_groups }}"
+      when:
+        - item.tags.Name not in defined_groups
+        - item.tags.vpc_id == ec2_vpc_id
+
+
+    - name: Collect EC2 Subnets in data structures
+      set_fact:
+        defined_subnets: "{{ defined_subnets }} + [ '{{ item.name }}' ]"
+      loop: "{{ subnets }}"
+
+    - name: Collect current EC2 Subnets on AWS
+      ec2_vpc_subnet_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_subnets
+
+    - name: Deleting EC2 Subnets on AWS
+      include_role:
+        name: iac_aws_subnet
+      vars:
+        action: delete
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        subnet: "{{ item.tags.Name }}"
+      loop: "{{ current_subnets.subnets }}"
+      when:
+        - item.tags.Name not in defined_subnets
+        - item.tags.vpc_id == ec2_vpc_id
+
+
+    - name: Creating EC2 security groups on AWS
+      include_role:
+        name: iac_aws_group
+      vars:
+        action: add
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        secgroup: "{{ item.name }}"
+        rules: "{{ item.rules }}"
+        wait: "no"
+      loop: "{{ security_groups }}"
+
+
+    - name: Creating EC2 Subnets on AWS
+      include_role:
+        name: iac_aws_subnet
+      vars:
+        action: add
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        subnet: "{{ item.name }}"
+        az: "{{ item.az }}"
+        cidr: "{{ item.cidr }}"
+      loop: "{{ subnets }}"
+
+
+    - name: Creating EC2 instances on AWS
+      include_role:
+        name: iac_aws_instance
+      vars:
+        action: add
+        subnet: "{{ item.subnet }}"
+        project: "{{ project_id }}"
+        instance: "{{ item.name }}"
+        security_groups: "{{ item.groups }}"
+        image_id: "{{ item.ami }}"
+        key_name: "{{ item.key }}"
+        instance_type: "{{ item.type }}"
+      loop: "{{ instances }}"

@@ -1,0 +1,22 @@
+- debug:
+    msg: "Deleting {{ subnet }} Subnet..."
+
+- name: "Obtain Subnet ID"
+  ec2_vpc_subnet_facts:
+    filters:
+      "tag:Name": "{{ subnet }}"
+      "tag:project": "{{ project }}"
+  register: subnet_tags
+
+- name: "Fail when subnet detected is not in the right VPC"
+  fail:
+    msg: "Subnet {{ subnet }} is not in VPC {{ vpc_id }}"
+  when:
+    - subnet_tags.subnets[0].vpc_id != vpc_id
+
+- name: "Delete Subnet"
+  ec2_vpc_subnet:
+    state: absent
+    cidr: "{{ subnet_tags.subnets[0].cidr_block }}"
+    vpc_id: "{{ vpc_id }}"
+    validate_certs: no

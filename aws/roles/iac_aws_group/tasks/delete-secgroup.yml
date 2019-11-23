@@ -1,0 +1,15 @@
+- debug:
+    msg: "Deleting {{ secgroup }} Security Group..."
+
+- name: "Obtain security group ID"
+  ec2_group_facts:
+    filters:
+      "tag:Name": "{{ secgroup }}"
+      "tag:project": "{{ project }}"
+  register: group_tags
+
+- name: "Delete security group"
+  ec2_group:
+    state: absent
+    group_id: "{{ group_tags.security_groups[0].group_id }}"
+    validate_certs: no

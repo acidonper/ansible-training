@@ -1,0 +1,58 @@
+- hosts: localhost
+  connection: local
+
+  vars:
+    environment: "{{ ENV | default('preproduction')}}"
+    version: "{{ VER | default('latest') }}"
+
+  vars_files:
+    - "./vars/aws-{{ environment }}-{{ version }}.yml"
+
+  tasks:
+
+    - name: Collect current EC2 instances on AWS
+      ec2_instance_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_instances
+
+    - name: Deleting EC2 instances on AWS
+      include_role:
+        name: iac_aws_instance
+      vars:
+        action: delete
+        instance: "{{ item.tags.Name }}"
+        project: "{{ project_id }}"
+      loop: "{{ current_instances.instances }}"
+
+    - name: Collect current EC2 security groups on AWS
+      ec2_group_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_groups
+
+    - name: Deleting EC2 security groups on AWS
+      include_role:
+        name: iac_aws_group
+      vars:
+        action: delete
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        secgroup: "{{ item.tags.Name }}"
+      loop: "{{ current_groups.security_groups }}"
+
+    - name: Collect current EC2 Subnets on AWS
+      ec2_vpc_subnet_facts:
+        filters:
+           "tag:project": "{{ project_id }}"
+      register: current_subnets
+
+    - name: Deleting EC2 Subnets on AWS
+      include_role:
+        name: iac_aws_subnet
+      vars:
+        action: delete
+        vpc_id: "{{ ec2_vpc_id }}"
+        project: "{{ project_id }}"
+        subnet: "{{ item.tags.Name }}"
+      loop: "{{ current_subnets.subnets }}"
