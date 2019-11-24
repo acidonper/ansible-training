@@ -41,8 +41,8 @@ Training folder includes The following list includes a lessons summary:
 
 * **Lesson 1** - Install Ansible
 * **Lesson 2** - Configure Ansible
-* **Lesson 3** - Install Ansible
-* **Lesson 4** - Install Ansible
+* **Lesson 3** - Ansible AdHoc Commands
+* **Lesson 4** - Ansible Inventory
 * **Lesson 5** - Install Ansible
 * **Lesson 6** - Install Ansible
 * **Lesson 7** - Install Ansible

@@ -1,7 +1,6 @@
-aws==0.2.5
-awscli==1.16.153
-ansible==2.8.0
-decorator==4.4.0
-boto==2.49.0
-boto3==1.9.171
-botocore==1.12.126
+aws>=0.2.5
+awscli>=1.16.153
+decorator>=4.4.0
+boto>=2.49.0
+boto3>=1.9.171
+botocore>=1.12.126

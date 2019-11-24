@@ -1,6 +1,6 @@
 # Configure Ansible
 
-# Goals
+## Goals
 
 * Get Current Ansible configuration
 * Enable auto-accept Hosts Keys
@@ -8,7 +8,7 @@
 * Change standard stdout callback
 * Modify default inventory file
 
-# Configure Ansible
+## Useful Links
 
 For more information, please visit:
 
