@@ -1,0 +1,56 @@
+##
+# Example:
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml
+##
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  vars:
+    environment: "{{ ENV | default('preproduction')}}"
+    version: "{{ VER | default('latest') }}"
+    inventory_dict: {}
+
+  vars_files:
+    - "./vars/aws-{{ environment }}-{{ version }}.yml"
+
+  tasks:
+
+    - name: Creating EC2 security groups on AWS
+      include_role:
+        name: iac_aws_instance
+      vars:
+        action: add-public-ip-inventory
+        instance: "{{ item.name }}"
+        project: "{{ project_id }}"
+        group: "ansiblenodes"
+      loop: "{{ instances }}"
+
+- hosts: ansiblenodes
+  user: ec2-user
+  become: true
+  
+  vars:
+    ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
+  
+  vars_prompt:
+  - name: "rh_cdn_user"
+    prompt: "Enter REDHAT CDN user"
+  - name: "rh_cdn_pass"
+    prompt: "Enter REDHAT CDN pasword"
+
+  tasks:
+
+    - name: Modify hostname
+      hostname:
+        name: "{{ inventory_hostname }}"
+
+    - name: Register Red Hat instance with auto-subscribe
+      redhat_subscription:
+        state: present
+        username: "{{ rh_cdn_user }}"
+        password: "{{ rh_cdn_pass }}"
+        auto_attach: true
+      when: 
+        - os_family == "RedHat"

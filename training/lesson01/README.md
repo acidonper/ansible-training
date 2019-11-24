@@ -1,7 +1,11 @@
 # Install Ansible
 
-## Installing the Control Node
+Lesson1's aim is to prepare an Ansible laboratory enviroment in order to be able to carriying out the following lessons' tasks.
 
-Please install Ansible engine in the server provided. 
+## Goals
+
+* Install Ansible Engine
+
+## Installing Control Node
 
 For more information, please visit https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#installing-the-control-node.

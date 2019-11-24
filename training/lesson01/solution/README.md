@@ -1,6 +1,6 @@
 # Install Ansible
 
-## Installing the Control Node
+## Installing Control Node
 
 Latest Release via DNF or Yum
 

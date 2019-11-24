@@ -76,13 +76,13 @@ instances:
     groups:
       - ssh_rule
 
-  # - name: student02
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az1
-  #   groups:
-  #     - ssh_rule
+  - name: student02
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.micro
+    subnet: subnet1-az1
+    groups:
+      - ssh_rule
 
   # - name: student03
   #   key: ansiblepoc

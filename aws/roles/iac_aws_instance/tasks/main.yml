@@ -16,3 +16,7 @@
 - block:
     - import_tasks: delete-instance.yml
   when: action == "delete"
+
+- block:
+    - import_tasks: add-public-ip-inventory.yml
+  when: action == "add-public-ip-inventory"

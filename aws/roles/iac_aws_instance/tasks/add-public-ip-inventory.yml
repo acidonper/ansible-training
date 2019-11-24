@@ -1,0 +1,26 @@
+---
+
+- ec2_instance_facts:
+    filters:
+      "tag:Name": "{{ instance }}"
+      "tag:project": "{{ project }}"
+  register: instance_facts
+
+- debug:
+    var: instance_facts
+
+- set_fact:
+    bastion_ip: "{{ instance_facts.instances[0].network_interfaces[0].association.public_ip }}"
+  when: (instance_facts.instances[0] is defined) and (instance_facts.instances[0].network_interfaces[0])
+
+- set_fact:
+    bastion_ip: "{{ instance_facts.instances[1].network_interfaces[0].association.public_ip }}"
+  when: (instance_facts.instances[1] is defined) and (instance_facts.instances[1].network_interfaces[0])
+
+- name: Add instance public IP to host group
+  add_host:
+    hostname: "{{ instance }}"
+    ansible_host: "{{ bastion_ip }}"
+    ansible_ssh_private_key_file: "./files/id_rsa"
+    groups:
+      - ansiblenodes
