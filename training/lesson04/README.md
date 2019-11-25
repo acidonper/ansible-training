@@ -2,7 +2,7 @@
 
 ## Goals
 
-Create an Ansible inventory with the following requisites:
+Create an Ansible inventory file named "inventory" with the following requisites:
 
 * 3 groups (north, south, west and east)
 * Each group has to contains a couple of devices (Example: **north** has student01 and student02, **south** has student03 and student04, ...)
