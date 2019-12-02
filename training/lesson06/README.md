@@ -18,6 +18,9 @@
     -   Debug Ansible facts
 -   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
 -   Run the playbook!
+-   Import "vars.yml" file into the playbook
+-   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Run the playbook!
 
 ## Useful Links
 
