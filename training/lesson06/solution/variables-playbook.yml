@@ -1,0 +1,26 @@
+##
+# Example: ansible-playbook -i inventory variables-playbook.yml -k -K
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  tasks:
+    - name: Debug test_string variable
+      debug:
+        var: test_string
+    - name: Debug test_array variable
+      debug:
+        var: test_array
+    - name: Debug test_dic variable
+      debug:
+        var: test_dic
+    - name: Debug the list of sources used as inventory
+      debug:
+        var: ansible_inventory_sources
+    - name: Debug the connection plugin actually used for the task on the target host
+      debug:
+        var: ansible_connection
+    - name: Debug Ansible facts
+      debug:
+        var: ansible_facts

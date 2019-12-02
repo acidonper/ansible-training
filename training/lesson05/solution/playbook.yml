@@ -1,11 +1,11 @@
-## 
+##
 # Example: ansible-playbook -i inventory playbook.yml -k -K
 ##
 
 - hosts: myinstance
   become: true
+  user: studentxx
   tasks:
-
     - name: Debug message
       debug:
         msg: "It is working"

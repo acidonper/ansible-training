@@ -1,0 +1,17 @@
+test_string: "string"
+test_array:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+test_dic:
+    employee01:
+        id: 01
+        name: Jose
+        age: 31
+    employee02:
+        id: 02
+        name: Victoria
+        age: 25
