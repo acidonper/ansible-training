@@ -1,0 +1,18 @@
+##
+# Example: ansible-playbook -i inventory vault-playbook.yml -k -K --ask-vault-pass
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  vars_files:
+    - vars/vault-vars.yml
+  tasks:
+    - name: Generate password hash sha512
+      set_fact:
+        new_hash_pass: "{{ new_user_pass | password_hash('sha512', new_user_secret ) }}"
+
+    - name: Create user
+      user:
+        name: "{{ new_user_name }}"
+        password: "{{ new_hash_pass }}"

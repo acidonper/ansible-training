@@ -1,0 +1,57 @@
+##
+# Example: ansible-playbook -i inventory tools-playbook.yml -k -K --ask-vault-pass
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  
+  vars:
+    - packages:
+        - mysql-server
+        - python3-PyMySQL
+    - mysql_user: testuser01
+    - mysql_pass: testuser01
+    - mysql_db: testdb01
+    - mysql_client_ip: 172.31.1.25
+
+  tasks:
+    - name: Install Mysql Server
+      package:
+        name: "{{ item }}"
+        state: present
+      register: operation
+      loop: "{{ packages }}"
+
+    - name: Start service mysql
+      service:
+        name: mysqld
+        state: started
+      when: operation is changed
+
+    - name: Restart service mysql
+      service:
+        name: mysqld
+        state: restarted
+      when: operation is not changed
+
+    - name: Create a new database
+      mysql_db:
+        name: "{{ mysql_db }}"
+        state: present
+
+    - name: Create a new mysql user
+      mysql_user:
+        name: "{{ mysql_user }}"
+        password: "{{ mysql_pass }}"
+        append_privs: yes
+        priv: '{{ mysql_db }}.*:ALL,GRANT'
+        host: "{{ mysql_client_ip }}"
+        state: present
+
+    - name: Create a new database
+      mysql_db:
+        name: "{{ mysql_db }}"
+        state: import
+        target: usertable.mysql
+      delegate_to: "{{ mysql_client_ip }}"

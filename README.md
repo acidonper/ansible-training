@@ -43,12 +43,12 @@ Training folder includes The following list includes a lessons summary:
 * **Lesson 2** - Configure Ansible
 * **Lesson 3** - Ansible AdHoc Commands
 * **Lesson 4** - Ansible Inventory
-* **Lesson 5** - Install Ansible
-* **Lesson 6** - Install Ansible
-* **Lesson 7** - Install Ansible
-* **Lesson 8** - Install Ansible
-* **Lesson 9** - Install Ansible
-* **Lesson 10** - Install Ansible
+* **Lesson 5** - Ansible Playbooks
+* **Lesson 6** - Ansible Variable
+* **Lesson 7** - Ansible Facts
+* **Lesson 8** - Ansible Vault
+* **Lesson 9** - Ansible Conditionals, loops and delegation
+* **Lesson 10** - Ansible Handlers
 * **Lesson 11** - Install Ansible
 * **Lesson 12** - Install Ansible
 * **Lesson 13** - Install Ansible

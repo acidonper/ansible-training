@@ -1,0 +1,32 @@
+##
+# Example: ansible-playbook -i inventory facts-playbook.yml -k -K
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  vars_files:
+    - vars/vars.yml
+  tasks:
+    - name: "Create custom fact directory"
+      file:
+        path: "/etc/ansible/facts.d"
+        state: directory
+
+    - name: "Insert custom fact file"
+      lineinfile:
+        path: /etc/ansible/facts.d/custom.fact
+        line: "haproxy_ip: {{ ansible_facts.default_ipv4.address }}"
+        create: yes
+
+    - name: Debug haproxy_ip
+      debug:
+        var: ansible_local.haproxy_ip
+
+    - name: Create a new variable with date
+      set_fact:
+        life_variable: "{{ ansible_date_time }}"
+
+    - name: Debug life_variable
+      debug:
+        var: life_variable

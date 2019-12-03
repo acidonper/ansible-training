@@ -1,4 +1,4 @@
-# Ansible Conditionals, loops and delegation
+# Ansible Conditionals, loops and delegate
 
 ## Goals
 
@@ -15,7 +15,7 @@
     -   Restart mysqld service if installation packages has not changed
     -   Create a new mysql database using "mysql_db" variable
     -   Create a new user using "mysql_name" and "mysql_pass" variables with read/write rights to "mysql_db" database from host "mysql_client_ip"
-    -   Import "usertable.mysql" table file into "mysql_db" database delegating the operation to <mysql_client_ip> instance 
+    -   Import "usertable.mysql" table into "mysql_db" database delegating to mysql_client_ip instance the operation
 -   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the database
@@ -24,8 +24,4 @@
 
 For more information, please visit:
 
--   https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
--   https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
--   https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
--   https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
--   https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
+-   https://stackoverflow.com/questions/29179856/create-mysql-tables-with-ansible
