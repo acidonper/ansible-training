@@ -33,7 +33,7 @@
 
     - name: Copy php web page file
       copy:
-        src: info.php
+        src: index.php
         dest: /var/www/html/php/index.php
 
   handlers:

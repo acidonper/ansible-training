@@ -6,7 +6,7 @@
 -   Create a playbook named "tools-playbook.yml". The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
     -   Install httpd and php package (\*Please use loop)
     -   Create a new folder "php" in "/var/www/html"
-    -   Create a new file "index.php" in "/var/www/html/php" with a PHP hello world content
+    -   Create a new file "index.php" in "/var/www/html/php" with a PHP info instruction
     -   Modify apache configuration file in order to enable php index and listen in port 81
     -   Restart httpd service if the configuration file change
 -   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
