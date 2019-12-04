@@ -1,5 +1,5 @@
 ##
-# Example: ansible-playbook -i inventory tools-playbook.yml -k -K --ask-vault-pass
+# Example: ansible-playbook -i inventory tools-playbook.yml -k -K
 ##
 
 - hosts: myinstance

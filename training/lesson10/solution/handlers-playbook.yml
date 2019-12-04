@@ -1,0 +1,44 @@
+##
+# Example: ansible-playbook -i inventory handlers-playbook.yml -k -K
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  
+  vars:
+    - packages:
+        - httpd
+        - php
+
+  tasks:
+
+    - name: Install Apache Packages
+      package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages }}"
+      notify: Restart httpd service
+
+    - name: "Create custom fact directory"
+      file:
+        path: "/var/www/html/php"
+        state: directory
+
+    - name: Copy Apache config file
+      copy:
+        src: httpd.conf
+        dest: /etc/httpd/conf/httpd.conf
+      notify: Restart httpd service
+
+    - name: Copy php web page file
+      copy:
+        src: info.php
+        dest: /var/www/html/php/index.php
+
+  handlers:
+
+    - name: Restart httpd service
+      service:
+        name: httpd
+        state: restarted
