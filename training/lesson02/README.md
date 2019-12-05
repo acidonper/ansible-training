@@ -2,11 +2,12 @@
 
 ## Goals
 
-* Get Current Ansible configuration
-* Enable auto-accept Hosts Keys
-* Define an Ansible log file
-* Change standard stdout callback
-* Modify default inventory file
+- Create an ansible configuration file in order to implement the following settings:
+    * Get Current Ansible configuration
+    * Enable auto-accept Hosts Keys
+    * Define an Ansible log file
+    * Change standard stdout callback
+    * Modify default inventory file
 
 ## Useful Links
 

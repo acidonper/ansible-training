@@ -3,12 +3,18 @@
 ## Goals
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
--   Create a playbook named "tools-playbook.yml". The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
-    -   Install httpd and php package (\*Please use loop)
-    -   Create a new folder "php" in "/var/www/html"
-    -   Create a new file "index.php" in "/var/www/html/php" with a PHP info instruction
-    -   Modify apache configuration file in order to enable php index and listen in port 81
-    -   Restart httpd service if the configuration file change
+-   Modify apache configuration file named "httpd.conf" in order to enable php index and listen in port 80 and 81
+-   Create a file named "index.php" with phpinfo() function included
+-   Create a playbook named "handlers-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
+    -   Implement a block with the following tasks:
+        -   Install "apache" and "php" packages (\*Please use loop)
+    -   If any of previous tasks fail, implement the the following tasks:
+        -   Install "httpd" and "php" packages (\*Please use loop)
+    -   Anyway, the following tasks have to be executed:
+        -   Create a new folder "php" in "/var/www/html"
+        -   Copy apache configuration file named "httpd.conf" to "/etc/httpd/conf/httpd.conf"
+        -   Copy php file named "index.php" to "/var/www/html/php"
+    -   NOTE: It is important to bear in mind that it is necessary restart httpd service when a new package or package version is installed or configuration file modified# Ansible Handlers
 -   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the apache server
@@ -23,5 +29,6 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
 -   https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html
+-   https://httpd.apache.org/docs/2.4/configuring.html
 -   https://docs.ansible.com/ansible/latest/modules/copy_module.html
--   https://httpd.apache.org/docs/2.4/bind.html
+  

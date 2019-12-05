@@ -9,7 +9,7 @@
     -   Dictionary varible called "test_dic" with 2 employees definition (name, id and age)
 -   Crate a variables file named "vars.yml" in a new folder named "vars" with the folowwing variables:
     -   String variable called "test_string" with random content (*Important: It has to be different from test_string in myinstance.yml)
--   Create a playbook named playbook-variables.yml. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
+-   Create a playbook named "playbook-variables.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
     -   Debug test_string variable (*Identify which one is printed)
     -   Debug test_array variable
     -   Debug test_dic variable
