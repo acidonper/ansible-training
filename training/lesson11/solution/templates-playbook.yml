@@ -5,13 +5,14 @@
 - hosts: myinstance
   become: true
   user: studentxx
-    vars:
-    - http_ports:
-        - 80
-        - 81
-        - 8008
-        - 8009
-        - 9000
+
+  vars:
+  - http_ports:
+      - 80
+      - 81
+      - 8008
+      - 8009
+      - 9000
 
   tasks:
 

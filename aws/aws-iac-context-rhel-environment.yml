@@ -61,7 +61,7 @@
         state: present
       loop:
         - git
-        - mysql
+        - mariadb
         - python3-PyMySQL
 
 - hosts: classroom
