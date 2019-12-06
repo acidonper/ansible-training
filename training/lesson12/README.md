@@ -21,7 +21,7 @@ Ansible Roles lesson is one of the most important lesson in this training. It is
     -   Execute timesync rhel-system-role in order to configure "time.google.com" as NTP server 
 *   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
 *   Run the playbook!
-*   Test the apache server
+*   Test
 
 ## Useful Links
 
