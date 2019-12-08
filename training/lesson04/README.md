@@ -22,3 +22,15 @@ For more information, please visit:
 
 -   https://docs.ansible.com/ansible/latest/user_guide/intro_inventory.html#intro-inventory
 -   https://docs.ansible.com/ansible/latest/cli/ansible-inventory.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

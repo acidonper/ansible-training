@@ -43,3 +43,15 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_conditionals.html
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

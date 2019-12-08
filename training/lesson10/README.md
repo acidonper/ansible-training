@@ -44,3 +44,14 @@ For more information, please visit:
 -   https://httpd.apache.org/docs/2.4/configuring.html
 -   https://docs.ansible.com/ansible/latest/modules/copy_module.html
   
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

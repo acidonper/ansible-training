@@ -17,3 +17,15 @@ $ sudo yum install ansible
 $ sudo subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 $ sudo dnf install ansible
 ```
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

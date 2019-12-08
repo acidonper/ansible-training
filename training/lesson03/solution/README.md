@@ -31,3 +31,15 @@ $ ansible localhost -c local -m user -a "name=pepe groups=wheel" -b -K
 $ ansible localhost -c local -m copy -a "src=/etc/passwd dest=/tmp/newfile owner=root mode=400" -b -K
 
 ```
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

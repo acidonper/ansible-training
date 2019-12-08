@@ -93,3 +93,15 @@ $ ansible-inventory -i inventory --graph
   |  |  |--student08
   |--@ungrouped:
 ```
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

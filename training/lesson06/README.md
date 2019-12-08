@@ -34,3 +34,15 @@ For more information, please visit:
 
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
 -   https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

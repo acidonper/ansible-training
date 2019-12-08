@@ -50,3 +50,15 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html
 -   https://docs.ansible.com/ansible/latest/dev_guide/index.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

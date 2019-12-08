@@ -43,3 +43,14 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/modules/template_module.html
 -   https://jinja.palletsprojects.com/en/2.10.x/
   
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

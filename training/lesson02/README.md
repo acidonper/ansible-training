@@ -21,3 +21,15 @@ For more information, please visit:
 
 -   https://docs.ansible.com/ansible/latest/cli/ansible-config.html
 -   https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

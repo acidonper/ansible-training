@@ -26,3 +26,15 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
 -   https://docs.ansible.com/ansible/latest/modules/set_fact_module.html
 -   https://docs.ansible.com/ansible/latest/reference_appendices/special_variables.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

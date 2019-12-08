@@ -39,7 +39,9 @@ Demos
 
 Demos folder includes a set of ansible implementation examples. The following list includes a summary:
 
--   **Demo1** - Ansible Tower Configuration as a Code
+-   **Demo1** - Install Ansible Tower
+-   **Demo2** - Navigate Ansible Tower Interface
+-   **Demo3** - Ansible Tower Configuration as a Code
 
 Lessons 
 ---------

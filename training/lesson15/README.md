@@ -56,3 +56,15 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html
 -   https://docs.ansible.com/ansible/latest/plugins/plugins.html
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks_tags.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

@@ -1,6 +1,11 @@
 ##
 # Example:
-#  $ ansible-playbook aws-iac-context-rhel-environment.yml
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml --ask-vault-pass
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml -t ansibletower
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml -t ansibletowerkeys
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml -t generalsubs
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml -t classroom
+#  $ ansible-playbook aws-iac-context-rhel-environment.yml -t users --ask-vault-pass
 ##
 
 - hosts: localhost
@@ -9,8 +14,10 @@
 
   tags:
     - ansibletower
+    - ansibletowerkeys
     - generalsubs
     - classroom
+    - users
 
   vars:
     environment: "{{ ENV | default('preproduction')}}"
@@ -40,7 +47,7 @@
     - generalsubs
   
   vars:
-    ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
+    ansible_ssh_private_key_file: ~/Documents/ansiblepoc.pem
 
   vars_prompt:
     - name: "rh_cdn_user"
@@ -74,6 +81,55 @@
         - mariadb
         - python3-PyMySQL
 
+    - name: Change SSH configuration pass auth
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication '
+        line: 'PasswordAuthentication yes'
+      notify: Restart SSHD
+
+  handlers:
+
+    - name: Restart SSHD
+      service:
+        name: sshd
+        state: restarted
+        enabled: yes
+
+
+- hosts: student*
+  user: ec2-user
+  become: true
+
+  vars_files:
+    - "./vars/vault-vars.yml"
+
+  tags:
+    - users
+
+  vars:
+    ansible_ssh_private_key_file: ~/Documents/ansiblepoc.pem
+
+  tasks:
+  
+    - debug:
+        var: inventory_hostname
+  
+    - name: Generate complex password
+      set_fact:
+        new_user_strong_pass: "{{ new_user_pass_prefix }}{{ inventory_hostname }}"
+
+    - name: Generate password hash sha512
+      set_fact:
+        new_hash_pass: "{{ new_user_strong_pass | password_hash('sha512', new_user_secret ) }}"
+
+    - name: Create user
+      user:
+        name: "{{ inventory_hostname }}"
+        password: "{{ new_hash_pass }}"
+        group: wheel
+
+
 
 - hosts: classroom
   user: ec2-user
@@ -83,7 +139,7 @@
     - classroom
 
   vars:
-    ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
+    ansible_ssh_private_key_file: ~/Documents/ansiblepoc.pem
 
   tasks:
     - name: Install package http
@@ -105,13 +161,50 @@
     - ansibletower
 
   vars:
-    ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
+    ansible_ssh_private_key_file: ~/Documents/ansiblepoc.pem
 
   tasks:
     - shell: subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
 
-    - name: Install package ansible
+    - name: Install packages 
       package:
-        name: ansible
+        name: "{{ item }}"
         state: present
+      loop:
+        - ansible
+        - wget
 
+- hosts: ansibletower*
+  user: ec2-user
+  become: true
+
+  tags:
+    - ansibletowerkeys
+
+  vars:
+    ansible_ssh_private_key_file: ~/Documents/ansiblepoc.pem
+
+  tasks:
+    - name: Copy SSH keys (Pub)
+      copy:
+        src: ~/Documents/tower_cluster.pem.pub
+        dest: /root/.ssh/id_rsa.pub
+        owner: root
+        group: root
+        mode: '0644'
+
+    - name: Copy SSH keys (Priv)
+      copy:
+        src: ~/Documents/tower_cluster.pem
+        dest: /root/.ssh/id_rsa
+        owner: root
+        group: root
+        mode: '0400'
+
+    - name: Copy SSH keys (Authorized)
+      copy:
+        src: ~/Documents/tower_cluster.pem.pub
+        dest: /root/.ssh/authorized_keys
+        owner: root
+        group: root
+        mode: '0644'

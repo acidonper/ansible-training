@@ -38,3 +38,14 @@ For more information, please visit:
 -   https://docs.ansible.com/ansible/latest/modules/import_tasks_module.html
 -   https://galaxy.ansible.com
 
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

@@ -24,3 +24,15 @@ For more information, please visit:
 
 -   https://docs.ansible.com/ansible/latest/user_guide/playbooks.html
 -   https://docs.ansible.com/ansible/latest/modules/modules_by_category.html
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com
