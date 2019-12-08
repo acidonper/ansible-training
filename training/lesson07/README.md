@@ -1,6 +1,12 @@
 # Ansible Facts
 
-## Goals
+Ansible Facts contain useful information during playbooks executions in order to take some decision or use them based on this information. On the other hand, it is a powerful tool to collect some extra information about the nodes which are beeing managed by Ansible.
+
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Create a playbook named "facts-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:

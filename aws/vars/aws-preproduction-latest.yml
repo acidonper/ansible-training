@@ -80,48 +80,42 @@ instances:
     groups:
       - ssh_rule
       - http_rule
-  #
-  # - name: student02
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az1
-  #   groups:
-  #     - ssh_rule
-  #     - http_rule
-  #
-  # - name: ansibletower01
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az2
-  #   groups:
-  #     - ssh_rule
-  #     - http_rule
-  #     - app_rule
-  # - name: ansibletower02
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az2
-  #   groups:
-  #     - ssh_rule
-  #     - http_rule
-  #     - app_rule
-  # - name: ansibletower03
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az2
-  #   groups:
-  #     - ssh_rule
-  #     - http_rule
-  #     - app_rule
-  # - name: ansibletowerdb01
-  #   key: ansiblepoc
-  #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.micro
-  #   subnet: subnet1-az3
-  #   groups:
-  #     - ssh_rule
-  #     - data_rule
+
+  - name: ansibletower01
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.micro
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+  
+  - name: ansibletower02
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.micro
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+  
+  - name: ansibletower03
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.micro
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+  
+  - name: ansibletowerdb01
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.micro
+    subnet: subnet1-az3
+    groups:
+      - ssh_rule
+      - data_rule

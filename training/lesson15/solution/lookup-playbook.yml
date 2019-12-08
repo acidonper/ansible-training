@@ -1,0 +1,19 @@
+##
+# Example: ansible-playbook -i inventory lookup-playbook.yml -k -K
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+
+  vars:
+    test_dict: "{{lookup('file', 'dictionaryyyy.json', errors='warn') | from_json }}"
+    dict_content: "{{lookup('file', 'dictionary.json', errors='warn')}}"
+    
+  tasks:
+    - debug:
+        var: test_dict
+
+    - debug:
+        var: dict_content
+

@@ -32,5 +32,9 @@
         "typescriptreact",
         "yaml",
         "yml"
+    ],
+    "cSpell.words": [
+        "asier",
+        "cidon"
     ]
 }

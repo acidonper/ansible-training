@@ -1,0 +1,39 @@
+##
+# Example: ansible-playbook -i inventory tags-playbook.yml -k -K
+##
+
+- hosts: myinstance
+  become: true
+  user: studentxx
+  tasks:
+    - name: Debug message
+      debug:
+        msg: "It is working"
+      tags:
+        - debug
+
+    - name: Print setup properties
+      setup:
+      tags:
+        - debug
+
+    - name: Create user
+      user:
+        name: testplay01
+      tags:
+        - user
+
+    - name: Install package http
+      package:
+        name: httpd
+        state: present
+      tags:
+        - apache
+
+    - name: Enable and Up httpd
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+      tags:
+        - apache

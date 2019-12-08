@@ -1,0 +1,136 @@
+thost: 192.168.121.217
+tuser: admin
+tpass: admin
+
+domain: example.com
+
+organizations:
+  - name: miami
+    desc: "Organization Miami"
+  - name: newyork
+    desc: "Organization NewYork"
+
+teams:
+  - name: developers
+    org: miami
+    desc: "Team Developers Miami"
+  - name: operators
+    org: miami
+    desc: "Team Operators Miami"
+  - name: developers
+    org: newyork
+    desc: "Team Developers NewYork"
+  - name: operators
+    org: newyork
+    desc: "Team Operators NewYork"
+
+users:
+  - username: developer01
+    password: developer01
+    email: "developer01@{{ domain }}"
+  - username: operator01
+    password: operator01
+    email: "operator01@{{ domain }}"
+
+admin_users:
+  - username: student01
+    password: student01
+    email: "student01@{{ domain }}"
+  - username: student02
+    password: student02
+    email: "student02@{{ domain }}"
+  - username: student03
+    password: student03
+    email: "student03@{{ domain }}"
+  - username: student04
+    password: student04
+    email: "student04@{{ domain }}"
+  - username: student05
+    password: student05
+    email: "student05@{{ domain }}"
+  - username: student06
+    password: student06
+    email: "student06@{{ domain }}"
+  - username: student07
+    password: student07
+    email: "student07@{{ domain }}"
+  - username: student08
+    password: student08
+    email: "student08@{{ domain }}"
+  - username: student09
+    password: student09
+    email: "student09@{{ domain }}"
+  - username: student10
+    password: student10
+    email: "student10@{{ domain }}"
+  - username: student11
+    password: student11
+    email: "student11@{{ domain }}"
+  - username: student12
+    password: student12
+    email: "student12@{{ domain }}"
+  - username: student13
+    password: student13
+    email: "student13@{{ domain }}"
+  - username: student14
+    password: student14
+    email: "student14@{{ domain }}"
+  - username: student15
+    password: student15
+    email: "student15@{{ domain }}"
+  - username: student16
+    password: student16
+    email: "student16@{{ domain }}"
+  - username: student17
+    password: student17
+    email: "student17@{{ domain }}"
+  - username: student18
+    password: student18
+    email: "student18@{{ domain }}"
+  - username: student19
+    password: student19
+    email: "student19@{{ domain }}"
+  - username: student20
+    password: student20
+    email: "student20@{{ domain }}"
+
+auditor_users:
+  - username: auditor01
+    password: auditor01
+    email: "auditor01@{{ domain }}"
+  - username: auditor02
+    password: auditor02
+    email: "auditor02@{{ domain }}"
+
+scm_credentials:
+  - name: "[TEST] Git Server"
+    org: miami
+    type: scm
+    user: towertest
+    pass: towertest
+  - name: "[TEST] Git Server"
+    org: newyork
+    type: scm
+    user: towertest
+    pass: towertest
+
+scm_projects:
+  - name: "[LABS] Lessons Project"
+    desc: "Lessons Project"
+    org: miami
+    git_url: "https://github.com/acidonper/ansible-training.git"
+    git_branch: master
+    git_cred: "[TEST] Git Server"
+  - name: "[LABS] Lessons Project"
+    desc: "Lessons Project"
+    org: newyork
+    git_url: "https://github.com/acidonper/ansible-training.git"
+    git_branch: master
+    git_cred: "[TEST] Git Server"
+
+scm_jobtemplates:
+  - name: "[DEV] My First Test by Ansible"
+    inv: "Demo Inventory"
+    project: "[LABS] Lessons Project"
+    playbook: "examples/ping.yml"
+    cred: "Demo Credential"

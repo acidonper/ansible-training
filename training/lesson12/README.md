@@ -2,7 +2,11 @@
 
 Ansible Roles lesson is one of the most important lesson in this training. It is important take the time required in order to understand how system roles work and how ansible galaxy repository helps users to accelerate ansible procedures implementation.
 
-## Goals
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Search and Install Nginx official role located on Ansible Galaxy
@@ -19,9 +23,9 @@ Ansible Roles lesson is one of the most important lesson in this training. It is
     -   Execute custom role named "mariadb" with an array var named "mysql_users" which locates the following users: test01, test02, test03
     -   Execute nginx galaxy role 
     -   Execute timesync rhel-system-role in order to configure "time.google.com" as NTP server 
-*   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
-*   Run the playbook!
-*   Test
+-     Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-     Run the playbook!
+-     Test
 
 ## Useful Links
 

@@ -1,6 +1,12 @@
 # Ansible Vault
 
-## Goals
+Ansible Vault is a security mechanism to protect variables with sensitive information as usernames, password, IPs, etc. This lesson tries to emulate regular use cases around these objects.
+
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Crate a vault variables file named "vault-vars.yml" in a new folder named "vars" with password "vault" and the following variables:

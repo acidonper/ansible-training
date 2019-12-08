@@ -1,6 +1,6 @@
 # Ansible Conditionals, loops and delegate
 
-## Goals
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Create a playbook named "tools-playbook.yml". The playbook should use tasks to ensure that the following conditions are met on the managed hosts:

@@ -7,6 +7,11 @@
   connection: local
   gather_facts: False
 
+  tags:
+    - ansibletower
+    - generalsubs
+    - classroom
+
   vars:
     environment: "{{ ENV | default('preproduction')}}"
     version: "{{ VER | default('latest') }}"
@@ -26,10 +31,14 @@
         group: "ansiblenodes"
       loop: "{{ instances }}"
 
+
 - hosts: ansiblenodes
   user: ec2-user
   become: true
 
+  tags:
+    - generalsubs
+  
   vars:
     ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
 
@@ -40,20 +49,21 @@
       prompt: "Enter REDHAT CDN pasword"
 
   tasks:
-    # - name: Modify hostname
-    #   hostname:
-    #     name: "{{ inventory_hostname }}"
 
     - name: Register Red Hat instance with auto-subscribe
       redhat_subscription:
         state: present
         username: "{{ rh_cdn_user }}"
         password: "{{ rh_cdn_pass }}"
-        auto_attach: true
         force_register: true
       when:
         - ansible_facts.os_family == "RedHat"
       ignore_errors: true
+
+    - name: Attach auto subscription
+      shell: subscription-manager attach --auto
+      when:
+        - ansible_facts.os_family == "RedHat"
 
     - name: Install packages
       package:
@@ -64,9 +74,13 @@
         - mariadb
         - python3-PyMySQL
 
+
 - hosts: classroom
   user: ec2-user
   become: true
+
+  tags:
+    - classroom
 
   vars:
     ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
@@ -81,3 +95,23 @@
         name: httpd
         state: started
         enabled: yes
+
+
+- hosts: ansibletower01
+  user: ec2-user
+  become: true
+
+  tags:
+    - ansibletower
+
+  vars:
+    ansible_ssh_private_key_file: ~/Downloads/ansiblepoc.pem
+
+  tasks:
+    - shell: subscription-manager repos --enable ansible-2.9-for-rhel-8-x86_64-rpms
+
+    - name: Install package ansible
+      package:
+        name: ansible
+        state: present
+

@@ -1,0 +1,33 @@
+##
+# Example: ansible-playbook -i inventory modules-playbook.yml -k
+##
+
+#- hosts: myinstance
+#  user: studentxx
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Implement action run with user John
+      my_first_module:
+        name: John
+        action: Run
+      register: module_output
+
+    - name: Display result
+      debug:
+        var: module_output
+  
+    - name: Implement action by default with user Peter
+      my_first_module:
+        name: Peter
+      register: module_output
+
+    - name: Display result
+      debug:
+        var: module_output
+  
+    - name: Force module to fail
+      my_first_module:
+        name: Fail
+      register: module_output

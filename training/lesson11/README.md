@@ -1,6 +1,19 @@
 # Ansible Templates
 
-## Goals
+Ansible Templates are a powerful tool which allows custom files can be generated based on variables. This lesson implements some examples about their implementation.
+
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Resources
+
+In order to assist this laboratory implementation, a set of resources have been added:
+
+-   httpd.conf (Default Apache configuration file in Red Hat Enterprise Linux 8)
+-   index.html (Basic HTML document structure)
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Create a playbook named "templates-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:

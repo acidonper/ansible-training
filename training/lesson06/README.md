@@ -1,6 +1,12 @@
 # Ansible Variables
 
-## Goals
+Ansible Variables are an important element as they are in other programming languages. This lesson tries to implement the most common scenarios implemented in a day to day Ansible procedures.
+
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Create a variables group file named "myinstance.yml" in a new folder named "group_vars" with the folowwing variables:

@@ -1,6 +1,18 @@
 # Ansible Handlers
 
-## Goals
+Ansible Handlers manage specific procedure situations when a tasks have been applied. This lesson implements some examples about this aspect.
+
+In order to understand this lesson properly, a set of steps have been designed to be implemented in the following section.
+
+**ENJOY !!!**
+
+## Resources
+
+In order to assist this laboratory implementation, a set of resources have been added:
+
+-   httpd.conf (Default Apache configuration file in Red Hat Enterprise Linux 8)
+
+## Steps 
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Modify apache configuration file named "httpd.conf" in order to enable php index and listen in port 80 and 81

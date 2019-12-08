@@ -1,0 +1,51 @@
+##
+# Example: ansible-playbook -i inventory filters-playbook.yml -k
+##
+
+- hosts: myinstance
+  user: studentxx
+  vars:
+    ips_array:
+        - "192.168.1.1"
+        - "192.16.2,2"
+        - "192.168.23.32"
+        - false
+    url: http://user:password@www.acme.com:9000/dir/index.html?query=term#fragment
+  tasks:
+    - name: Obtain file content using shell command
+      shell: cat ./dictionary.json
+      register: jsondict
+      
+    - name: Parse json to an ansible dictionary
+      set_fact:
+        mydict: "{{ jsondict.stdout | from_json }}"
+
+    - name: "Display all cluster names"
+      debug:
+        var: item
+      loop: "{{ mydict.domain_definition | json_query('domain.cluster[*].name') }}"
+
+    - name: "Display all server names"
+      debug:
+        var: item
+      loop: "{{ mydict.domain_definition | json_query('domain.server[*].name') }}"
+
+    - name: "Display all dictionary names"
+      debug:
+        var: item
+      loop: "{{ mydict.domain_definition | json_query('domain.library[*].name') }}"
+
+    - name: Test ips_arrays IPs
+      debug:
+        var: item | ipv4
+      loop: "{{ ips_array }}"
+      failed_when: '"{{ item | ipv4 }}" == false'
+    
+    - name: Parse url in multiple pieces
+      set_fact:
+        urlparsed: "{{ url | urlsplit }}"
+
+    - name: "Display URL properties"
+      debug:
+        msg: "Hostname: {{ urlparsed.hostname }} / Port: {{ urlparsed.port }} / Path: {{ urlparsed.path }}"
+
