@@ -49,19 +49,6 @@
         host: "{{ mysql_client_ip }}"
         state: present
 
-#- hosts: dbclientinstance
-#  user: student15
-#  vars:
-#    - packages:
-#        - mariadb-server
-#        - python3-PyMySQL
-#    - mysql_user: testuser01
-#    - mysql_pass: testuser01
-#    - mysql_db: testdb01
-#    - mysql_client_ip: 172.31.1.25
-#
-#  tasks:
-
     - name: Copy usertable.mysl file to target Server
       become: false
       copy:
