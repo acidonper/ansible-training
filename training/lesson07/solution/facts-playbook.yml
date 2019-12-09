@@ -12,22 +12,15 @@
       file:
         path: "/etc/ansible/facts.d"
         state: directory
-
-    - name: "Insert custom fact file"
-      blockinfile:
+ 
+    - name: Creating facts file
+      ini_file:
         path: /etc/ansible/facts.d/custom.fact
-        block: |
-          [haproxy]
-          haproxy_ip=192.168.1.12
-        create: yes
-
-- hosts: myinstance
-  become: true
-  user: studentxx
-  vars_files:
-    - vars/vars.yml
-  tasks:
-    - name: Debug haproxy_ip
+        section: haproxy
+        option: haproxy_ip
+        value: 192.168.123.123
+    
+  - name: Debug haproxy_ip
       debug:
         var: ansible_local.haproxy_ip
 
