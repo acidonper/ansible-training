@@ -14,9 +14,11 @@
         state: directory
 
     - name: "Insert custom fact file"
-      lineinfile:
+      blockinfile:
         path: /etc/ansible/facts.d/custom.fact
-        line: "haproxy_ip: {{ ansible_facts.default_ipv4.address }}"
+        block: |
+          [haproxy]
+          haproxy_ip=192.168.1.12
         create: yes
 
 - hosts: myinstance
