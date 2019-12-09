@@ -20,9 +20,9 @@
         option: haproxy_ip
         value: 192.168.123.123
     
-  - name: Debug haproxy_ip
-      debug:
-        var: ansible_local.haproxy_ip
+    - name: Debug haproxy_ip
+        debug:
+          var: ansible_local.haproxy_ip
 
     - name: Create a new variable with date
       set_fact:
