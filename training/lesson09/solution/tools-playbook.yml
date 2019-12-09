@@ -4,7 +4,7 @@
 
 - hosts: myinstance
   become: true
-  user: studentxx
+  user: student15
   
   vars:
     - packages:
@@ -13,7 +13,7 @@
     - mysql_user: testuser01
     - mysql_pass: testuser01
     - mysql_db: testdb01
-    - mysql_client_ip: 172.31.1.25
+    - mysql_client_ip: 172.31.1.8
 
   tasks:
     - name: Install Mysql Server
@@ -49,18 +49,32 @@
         host: "{{ mysql_client_ip }}"
         state: present
 
+#- hosts: dbclientinstance
+#  user: student15
+#  vars:
+#    - packages:
+#        - mariadb-server
+#        - python3-PyMySQL
+#    - mysql_user: testuser01
+#    - mysql_pass: testuser01
+#    - mysql_db: testdb01
+#    - mysql_client_ip: 172.31.1.25
+#
+#  tasks:
+
     - name: Copy usertable.mysl file to target Server
-      become: no
+      become: false
       copy:
-        src: usertable.mysl
-        dest: "/home/{{ ansible_user }}/usertable.mysl"
+        src: "./usertable.mysql"
+        dest: "/home/{{ ansible_user }}/usertable.mysql"
+      delegate_to: "{{ mysql_client_ip }}"
 
     - name: Create a new database
-      become: no
+      become: false
       mysql_db:
         name: "{{ mysql_db }}"
         state: import
-        target: "/home/{{ ansible_user }}/usertable.mysl"
+        target: "/home/{{ ansible_user }}/usertable.mysql"
         login_host: "{{ ansible_host }}"
         login_user: testuser01
         login_password: testuser01
