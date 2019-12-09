@@ -15,7 +15,7 @@ In order to understand this lesson properly, a set of steps have been designed t
     - Debug local facts "haproxy_ip"
     - Create a new variable named "life_variable" with date content
     - Debug variable "life_variable"
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 
 ## Useful Links

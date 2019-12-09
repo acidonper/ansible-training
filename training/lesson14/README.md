@@ -40,7 +40,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Display module execution output
     -   Execute "my_first_module" module, and register output, with the following parameters:
         -   name: Fail
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 
 ## Useful Links

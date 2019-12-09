@@ -28,7 +28,7 @@ $ ansible localhost -c local -m user -a "name=pepe groups=wheel" -b -K
 ## Copy sudo file **/etc/passwd** on localhost using user "yourname" and setting permissions 440 and owner root in **/tmp/newfile**
 
 ```
-$ ansible localhost -c local -m copy -a "src=/etc/passwd dest=/tmp/newfile owner=root mode=400" -b -K
+$ ansible localhost -c local -m copy -a "src=/etc/passwd dest=/tmp/newfile owner=root mode=440" -b -K
 
 ```
 

@@ -49,9 +49,19 @@
         host: "{{ mysql_client_ip }}"
         state: present
 
+    - name: Copy usertable.mysl file to target Server
+      become: no
+      copy:
+        src: usertable.mysl
+        dest: "/home/{{ ansible_user }}/usertable.mysl"
+
     - name: Create a new database
+      become: no
       mysql_db:
         name: "{{ mysql_db }}"
         state: import
-        target: usertable.mysql
+        target: "/home/{{ ansible_user }}/usertable.mysl"
+        login_host: "{{ ansible_host }}"
+        login_user: testuser01
+        login_password: testuser01
       delegate_to: "{{ mysql_client_ip }}"

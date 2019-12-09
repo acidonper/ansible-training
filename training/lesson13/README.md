@@ -29,7 +29,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Test each array IP item in order to validate the IP address. If one of them is not valid, this tasks has to throw an error. 
     -   Extract *path*, *port* and *hostname* from the following url:
         -   http://user:password@www.acme.com:9000/dir/index.html?query=term#fragment
--     Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-     Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -     Run the playbook!
 
 ## Useful Links

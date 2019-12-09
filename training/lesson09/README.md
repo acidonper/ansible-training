@@ -30,7 +30,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Create a new mysql database using "mysql_db" variable
     -   Create a new user using "mysql_name" and "mysql_pass" variables with read/write rights to "mysql_db" database from host "mysql_client_ip"
     -   Import "usertable.mysql" table file into "mysql_db" database delegating the operation to <mysql_client_ip> instance 
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the database
 

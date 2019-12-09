@@ -28,7 +28,7 @@
     - "./vars/aws-{{ environment }}-{{ version }}.yml"
 
   tasks:
-    - name: Creating EC2 security groups on AWS
+    - name: Extract EC2 instance information
       include_role:
         name: iac_aws_instance
       vars:

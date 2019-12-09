@@ -16,7 +16,7 @@ In order to understand this lesson properly, a set of steps have been designed t
     -   Generate a password hash in sha512 using "new_user_pass" and "123qweasdzxc" secret in a new variable named "new_hash_pass"
     -   Create a new user using "new_user_name" and "new_hash_pass" variables
 -   Import "vault-vars.yml" file into the playbook
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the new user
 -   Modify "vault-vars.yml" file to include a string variable named "new_user_secret" with the previous secret content "123qweasdzxc"

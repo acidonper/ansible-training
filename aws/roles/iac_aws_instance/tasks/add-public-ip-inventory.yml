@@ -1,5 +1,9 @@
 ---
 
+- set_fact:
+    aws_inventory: []
+  when: aws_inventory is undefined
+
 - ec2_instance_facts:
     filters:
       "tag:Name": "{{ instance }}"
@@ -24,3 +28,14 @@
     ansible_ssh_private_key_file: "./files/id_rsa"
     groups:
       - ansiblenodes
+  
+- set_fact:
+    aws_inventory_item: 
+      - hostname: "{{ instance }}"
+      - public_dns_name: "{{ instance_facts.instances[0].public_dns_name }}"
+      - public_ip_address: "{{ instance_facts.instances[0].public_ip_address }}"
+      - private_dns_name: "{{ instance_facts.instances[0].private_dns_name }}"
+      - private_ip_address: "{{ instance_facts.instances[0].private_ip_address }}"
+
+- set_fact:
+    aws_inventory: "{{ aws_inventory + [ aws_inventory_item ] }}"

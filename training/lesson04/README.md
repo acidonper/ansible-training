@@ -10,7 +10,7 @@ In order to understand this lesson properly, a set of steps have been designed t
 
 Create an Ansible inventory file named "inventory" with the following requisites:
 
--   3 groups (north, south, west and east)
+-   4 groups (north, south, west and east)
 -   Each group has to contains a couple of devices (Example: **north** has student01 and student02, **south** has student03 and student04, ...)
 -   Create a super group **laboratory** with all other groups included
 -   Define an ansible var **zone** with the group name in each group

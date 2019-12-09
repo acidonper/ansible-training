@@ -27,7 +27,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Create a variable named "dict_content" with dictionary.json file content and parse to an Ansible dictionary (if file does not exist display a warning)
     -   Display "test_dict" variable
     -   Display "dict_content" variable
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run lookup-playbook.yml!
 
 ## tags
@@ -37,7 +37,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Tag tasks 1 and 2 as "debug" 
     -   Tag task 3 as "user"
     -   Tag tasks 4 and 5 as "apache"
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run tags-playbook.yml with tag debug!
 -   Run tags-playbook.yml with tag user!
 -   Run tags-playbook.yml with tag apache!

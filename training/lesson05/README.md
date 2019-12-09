@@ -15,7 +15,7 @@ In order to understand this lesson properly, a set of steps have been designed t
     -   Create a new user "testplay01" on group "myinstance" using become (root)
     -   Install package "httpd" on group "myinstance" using become (root)
     -   Enable and up "httpd" service on group "myinstance" using become (root)
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook and verify results via curl http://localhost
 
 ## Useful Links

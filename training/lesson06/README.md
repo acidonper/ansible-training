@@ -22,10 +22,10 @@ In order to understand this lesson properly, a set of steps have been designed t
     -   Debug the list of sources used as inventory
     -   Debug the connection plugin actually used for the task on the target host
     -   Debug Ansible facts
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Import "vars.yml" file into the playbook
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 
 ## Useful Links

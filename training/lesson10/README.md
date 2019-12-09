@@ -27,7 +27,7 @@ In order to assist this laboratory implementation, a set of resources have been 
         -   Copy apache configuration file named "httpd.conf" to "/etc/httpd/conf/httpd.conf"
         -   Copy php file named "index.php" to "/var/www/html/php"
     -   NOTE: It is important to bear in mind that it is necessary restart httpd service when a new package or package version is installed or configuration file modified# Ansible Handlers
--   Before running your playbook, run the ansible-playbook --syntax-check site.yml command to verify that its syntax is correct
+-   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the apache server
 -   Modify the content of the configuration file to listen in port 82
