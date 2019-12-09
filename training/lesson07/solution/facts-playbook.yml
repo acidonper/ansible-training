@@ -22,7 +22,7 @@
     
     - name: Debug haproxy_ip
         debug:
-          var: ansible_local.haproxy_ip
+          var: ansible_local.custom.haproxy.haproxy_ip
 
     - name: Create a new variable with date
       set_fact:
