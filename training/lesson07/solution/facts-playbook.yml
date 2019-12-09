@@ -19,6 +19,12 @@
         line: "haproxy_ip: {{ ansible_facts.default_ipv4.address }}"
         create: yes
 
+- hosts: myinstance
+  become: true
+  user: studentxx
+  vars_files:
+    - vars/vars.yml
+  tasks:
     - name: Debug haproxy_ip
       debug:
         var: ansible_local.haproxy_ip
