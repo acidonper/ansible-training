@@ -8,7 +8,7 @@
   
   vars:
     - packages:
-        - mysql-server
+        - mariadb-server
         - python3-PyMySQL
     - mysql_user: testuser01
     - mysql_pass: testuser01
@@ -25,13 +25,13 @@
 
     - name: Start service mysql
       service:
-        name: mysqld
+        name: mariadb
         state: started
       when: operation is changed
 
     - name: Restart service mysql
       service:
-        name: mysqld
+        name: mariadb
         state: restarted
       when: operation is not changed
 
