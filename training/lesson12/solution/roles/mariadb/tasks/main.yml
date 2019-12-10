@@ -1,7 +1,4 @@
 ---
-# tasks file for roles/mariadb
-
----
 # tasks file for mariadb
 
 - name: Install mariadb package
