@@ -1,0 +1,67 @@
+- hosts: localhost
+  gather_facts: no
+  connection: local
+  become: true
+
+  tags:
+    - python_env
+  
+  vars:
+    python_venv_dir: "/usr/local/virtualenvs"
+
+    python_venvs:
+    
+    - name: ansible29
+      python_version: python3
+      pip_version: 3
+      packages:
+        - ansible==2.9
+  
+    - name: ansible28
+      python_version: python2
+      pip_version: 2
+      packages:
+        - ansible==2.8
+  
+    - name: ansible27
+      python_version: python2
+      pip_version: 2
+      packages:
+        - ansible==2.7
+
+  tasks:
+
+    - name: Install prerequisites packages
+      package:
+        name: "{{ item }}"
+        state: latest
+      loop:
+        - python2
+        - python3-virtualenv
+        - python3-libselinux
+
+    - name: Create a directory if it does not exist
+      file:
+        path: "{{ python_venv_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Create Python Virtual Environments
+      shell: 'virtualenv -p "{{ item.python_version }}" "{{ python_venv_dir }}/{{ item.name }}-{{ item.python_version }}"'
+      loop: "{{ python_venvs }}"
+      ignore_errors: yes
+
+    - name: Create Python Virtual Environments Requirements file
+      template:
+        src: "./templates/requirements.txt.j2"
+        dest: "{{ python_venv_dir }}/{{ item.name }}-{{ item.python_version }}/requirements.txt"
+      loop: "{{ python_venvs }}"
+      when: item.packages
+
+    - name: Install Requirements
+      shell: 'source ./bin/activate && pip{{ item.pip_version }} install -r requirements.txt'
+      args:
+        chdir: "{{ python_venv_dir }}/{{ item.name }}-{{ item.python_version }}/"
+      loop: "{{ python_venvs }}"
+      when: item.packages
+
