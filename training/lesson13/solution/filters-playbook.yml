@@ -39,7 +39,8 @@
       debug:
         var: item | ipv4
       loop: "{{ ips_array }}"
-      failed_when: '"{{ item | ipv4 }}" == false'
+      failed_when: item|ipv4 == false
+      ignore_errors: yes
     
     - name: Parse url in multiple pieces
       set_fact:
