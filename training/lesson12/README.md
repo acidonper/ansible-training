@@ -15,8 +15,8 @@ In order to understand this lesson properly, a set of steps have been designed t
 -   Create a custom role named "mariadb" which has to implement the following tasks:
     -   Install mariadb-server package
     -   Start and Enable mysqld service
-    -   Create databases defined in "mysql_datases" (*At least "testroles01" by default)
-    -   Include a tasks file named "create_mariadb_user.yml" located in tasks folder. It is necessary import this file as often as the number of users defined in an array variable named "mysql_users" (*At least "test01" by default). Regarding this tasks file, it has to perform the following tasks:
+    -   Create databases defined in "mysql_databases" (* At least "testroles01" by default)
+    -   Include a tasks file named "create_mariadb_user.yml" located in tasks folder. It is necessary import this file as often as the number of users defined in an array variable named "mysql_users" (* At least "test01" by default). Regarding this tasks file, it has to perform the following tasks:
         -   Create a database named "``<user_name``"
         -   Create user with user name and password using ``<user_name>``, rights to "testroles01" and ``<user_name>`` databases from `<myinstance_ip>`
 -   Create a playbook named "roles-playbook.yml" using "myinstance" as a hosts parameter and `<studentxx>` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
