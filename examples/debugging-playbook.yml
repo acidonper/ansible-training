@@ -1,0 +1,13 @@
+##
+# Example: ansible-playbook debugging-playbook.yml
+##
+
+- hosts: localhost
+  connection: local
+  strategy: debug
+  tasks:
+
+    - name: Copy file
+      copy:
+        src: /etc/hostssssss
+        dest: /tmp/test01

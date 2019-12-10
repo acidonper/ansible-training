@@ -1,0 +1,11 @@
+##
+# Example: ansible-lint lint-playbook.yml
+##
+
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Debug 
+      debug: 
+        msg: "Hola"

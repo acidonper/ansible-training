@@ -1,3 +1,7 @@
+##
+# $ ansible-playbook confg_pythonenv.yml
+##
+
 - hosts: localhost
   gather_facts: no
   connection: local

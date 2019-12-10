@@ -1,0 +1,12 @@
+##
+# Example: ansible-playbook diff-playbook.yml -C --diff
+##
+
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Copy file
+      copy:
+        src: /etc/hosts
+        dest: /tmp/test01
