@@ -25,7 +25,7 @@
         loop: "{{ packages_fail }}"
         notify: Restart httpd service
 
-    rescue:
+      rescue:
 
       - name: Install Apache Packages
         package:
@@ -34,7 +34,7 @@
         loop: "{{ packages_ok }}"
         notify: Restart httpd service
 
-    always:
+      always:
 
       - name: "Create custom fact directory"
         file:
