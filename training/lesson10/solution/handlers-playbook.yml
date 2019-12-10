@@ -7,34 +7,50 @@
   user: studentxx
   
   vars:
-    - packages:
+    - packages_fail:
+        - apache
+        - php
+    - packages_ok:
         - httpd
         - php
 
   tasks:
 
-    - name: Install Apache Packages
-      package:
-        name: "{{ item }}"
-        state: present
-      loop: "{{ packages }}"
-      notify: Restart httpd service
+    - block:
 
-    - name: "Create custom fact directory"
-      file:
-        path: "/var/www/html/php"
-        state: directory
+      - name: Install Apache Packages
+        package:
+          name: "{{ item }}"
+          state: present
+        loop: "{{ packages_fail }}"
+        notify: Restart httpd service
 
-    - name: Copy Apache config file
-      copy:
-        src: httpd.conf
-        dest: /etc/httpd/conf/httpd.conf
-      notify: Restart httpd service
+    rescue:
 
-    - name: Copy php web page file
-      copy:
-        src: index.php
-        dest: /var/www/html/php/index.php
+      - name: Install Apache Packages
+        package:
+          name: "{{ item }}"
+          state: present
+        loop: "{{ packages_ok }}"
+        notify: Restart httpd service
+
+    always:
+
+      - name: "Create custom fact directory"
+        file:
+          path: "/var/www/html/php"
+          state: directory
+
+      - name: Copy Apache config file
+        copy:
+          src: httpd.conf
+          dest: /etc/httpd/conf/httpd.conf
+        notify: Restart httpd service
+
+      - name: Copy php web page file
+        copy:
+          src: index.php
+          dest: /var/www/html/php/index.php
 
   handlers:
 
