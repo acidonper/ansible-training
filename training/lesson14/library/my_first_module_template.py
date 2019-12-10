@@ -28,12 +28,12 @@ author:
 EXAMPLES = '''
 # Pepe action
 - name: Test with a message
-  my_first_role:
+  my_first_module:
     name: Pepe
     action: run
 # Laura action
 - name: Test with a message
-  my_first_role:
+  my_first_module:
     name: Laura
     action: jump
 
