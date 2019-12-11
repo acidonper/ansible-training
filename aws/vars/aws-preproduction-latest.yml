@@ -83,335 +83,335 @@ security_groups:
 ## Instances definition
 
 instances:
-  - name: classroom
-    key: ansiblepoc
-    ami: ami-04facb3ed127a2eb6
-    type: t2.micro
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student01
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student02
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student03
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student04
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student05
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student06
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student07
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student08
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student09
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student10
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student11
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student12
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student13
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student14
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student15
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student16
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student17
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student18
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student19
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student20
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student20
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student21
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student22
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student23
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student24
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student25
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student26
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-
-  - name: student27
-    key: ansiblepoc
-    type: t2.micro
-    ami: ami-04facb3ed127a2eb6
-    subnet: subnet1-az1
-    groups:
-      - ssh_rule
-      - http_rule
-      - mysql_rule
-  
-  # - name: ansibletower01
+  # - name: classroom
   #   key: ansiblepoc
   #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.medium
-  #   subnet: subnet1-az2
+  #   type: t2.micro
+  #   subnet: subnet1-az1
   #   groups:
   #     - ssh_rule
   #     - http_rule
-  #     - app_rule
-  #     - tower_cluster
-  
-  # - name: ansibletower02
+  #     - mysql_rule
+
+  # - name: student01
   #   key: ansiblepoc
+  #   type: t2.micro
   #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.medium
-  #   subnet: subnet1-az2
+  #   subnet: subnet1-az1
   #   groups:
   #     - ssh_rule
   #     - http_rule
-  #     - app_rule
-  #     - tower_cluster
-  
-  # - name: ansibletower03
+  #     - mysql_rule
+
+  # - name: student02
   #   key: ansiblepoc
+  #   type: t2.micro
   #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.medium
-  #   subnet: subnet1-az2
+  #   subnet: subnet1-az1
   #   groups:
   #     - ssh_rule
   #     - http_rule
-  #     - app_rule
-  #     - tower_cluster
-  
-  # - name: ansibletowerdb01
+  #     - mysql_rule
+
+  # - name: student03
   #   key: ansiblepoc
+  #   type: t2.micro
   #   ami: ami-04facb3ed127a2eb6
-  #   type: t2.small
-  #   subnet: subnet1-az3
+  #   subnet: subnet1-az1
   #   groups:
   #     - ssh_rule
-  #     - data_rule
-  #     - tower_cluster
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student04
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student05
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student06
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student07
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student08
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student09
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student10
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student11
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student12
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student13
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student14
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student15
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student16
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student17
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student18
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student19
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student20
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student20
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student21
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student22
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student23
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student24
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student25
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student26
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+
+  # - name: student27
+  #   key: ansiblepoc
+  #   type: t2.micro
+  #   ami: ami-04facb3ed127a2eb6
+  #   subnet: subnet1-az1
+  #   groups:
+  #     - ssh_rule
+  #     - http_rule
+  #     - mysql_rule
+  
+  - name: ansibletower001
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.medium
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+      - tower_cluster
+  
+  - name: ansibletower002
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.medium
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+      - tower_cluster
+  
+  - name: ansibletower003
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.medium
+    subnet: subnet1-az2
+    groups:
+      - ssh_rule
+      - http_rule
+      - app_rule
+      - tower_cluster
+  
+  - name: ansibletowerdb001
+    key: ansiblepoc
+    ami: ami-04facb3ed127a2eb6
+    type: t2.small
+    subnet: subnet1-az3
+    groups:
+      - ssh_rule
+      - data_rule
+      - tower_cluster

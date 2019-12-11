@@ -28,16 +28,16 @@
            "tag:project": "{{ project_id }}"
       register: current_instances
 
-    # - name: Deleting EC2 instances on AWS
-    #   include_role:
-    #     name: iac_aws_instance
-    #   vars:
-    #     action: delete
-    #     instance: "{{ item.tags.Name }}"
-    #     project: "{{ project_id }}"
-    #   loop: "{{ current_instances.instances }}"
-    #   when:
-    #     - item.tags.Name not in defined_instances
+    - name: Deleting EC2 instances on AWS
+      include_role:
+        name: iac_aws_instance
+      vars:
+        action: delete
+        instance: "{{ item.tags.Name }}"
+        project: "{{ project_id }}"
+      loop: "{{ current_instances.instances }}"
+      when:
+        - item.tags.Name not in defined_instances
 
 
     - name: Collect EC2 security groups in data structures
