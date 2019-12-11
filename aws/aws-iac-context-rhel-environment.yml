@@ -72,30 +72,6 @@
       when:
         - ansible_facts.os_family == "RedHat"
 
-    - name: Install packages
-      package:
-        name: "{{ item }}"
-        state: present
-      loop:
-        - git
-        - mariadb
-        - python3-PyMySQL
-
-    - name: Change SSH configuration pass auth
-      lineinfile:
-        path: /etc/ssh/sshd_config
-        regexp: '^PasswordAuthentication '
-        line: 'PasswordAuthentication yes'
-      notify: Restart SSHD
-
-  handlers:
-
-    - name: Restart SSHD
-      service:
-        name: sshd
-        state: restarted
-        enabled: yes
-
 
 - hosts: student*
   user: ec2-user
@@ -129,6 +105,29 @@
         password: "{{ new_hash_pass }}"
         group: wheel
 
+    - name: Install packages
+      package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - mariadb
+        - python3-PyMySQL
+
+    - name: Change SSH configuration pass auth
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication '
+        line: 'PasswordAuthentication yes'
+      notify: Restart SSHD
+
+  handlers:
+
+    - name: Restart SSHD
+      service:
+        name: sshd
+        state: restarted
+        enabled: yes
 
 
 - hosts: classroom
@@ -153,7 +152,7 @@
         enabled: yes
 
 
-- hosts: ansibletower01
+- hosts: ansibletower001
   user: ec2-user
   become: true
 
