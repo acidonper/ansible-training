@@ -5,34 +5,76 @@ tpass: admin
 domain: example.com
 
 organizations:
-  - name: miami
-    desc: "Organization Miami"
-  - name: newyork
-    desc: "Organization NewYork"
+  - name: student01
+    desc: student01
+  - name: student02
+    desc: student02
+  - name: student03
+    desc: student03
+  - name: student04
+    desc: student04
+  - name: student05
+    desc: student05
+  - name: student06
+    desc: student06
+  - name: student07
+    desc: student07
+  - name: student08
+    desc: student08
+  - name: student09
+    desc: student09
+  - name: student10
+    desc: student10
+  - name: student11
+    desc: student11
+  - name: student12
+    desc: student12
+  - name: student13
+    desc: student13
+  - name: student14
+    desc: student14
+  - name: student15
+    desc: student15
+  - name: student16
+    desc: student16
+  - name: student17
+    desc: student17
+  - name: student18
+    desc: student18
+  - name: student19
+    desc: student19
+  - name: student20
+    desc: student20
+  - name: student21
+    desc: student21
+  - name: student22
+    desc: student22
+  - name: student23
+    desc: student23
+  - name: student24
+    desc: student24
+  - name: student25
+    desc: student25
+  - name: student26
+    desc: student26
+  - name: student27
+    desc: student27
+  - name: student28
+    desc: student28
+  - name: student29
+    desc: student29
+  - name: student30
+    desc: student30
 
 teams:
   - name: developers
-    org: miami
+    org: Default
     desc: "Team Developers Miami"
   - name: operators
-    org: miami
+    org: Default
     desc: "Team Operators Miami"
-  - name: developers
-    org: newyork
-    desc: "Team Developers NewYork"
-  - name: operators
-    org: newyork
-    desc: "Team Operators NewYork"
 
 users:
-  - username: developer01
-    password: developer01
-    email: "developer01@{{ domain }}"
-  - username: operator01
-    password: operator01
-    email: "operator01@{{ domain }}"
-
-admin_users:
   - username: student01
     password: student01
     email: "student01@{{ domain }}"
@@ -93,14 +135,46 @@ admin_users:
   - username: student20
     password: student20
     email: "student20@{{ domain }}"
+  - username: student21
+    password: student21
+    email: "student21@{{ domain }}"
+  - username: student22
+    password: student22
+    email: "student22@{{ domain }}"
+  - username: student23
+    password: student23
+    email: "student23@{{ domain }}"
+  - username: student24
+    password: student24
+    email: "student24@{{ domain }}"
+  - username: student25
+    password: student25
+    email: "student25@{{ domain }}"
+  - username: student26
+    password: student26
+    email: "student26@{{ domain }}"
+  - username: student27
+    password: student27
+    email: "student27@{{ domain }}"
+  - username: student28
+    password: student28
+    email: "student28@{{ domain }}"
+  - username: student29
+    password: student29
+    email: "student29@{{ domain }}"
+  - username: student30
+    password: student30
+    email: "student30@{{ domain }}"
+
+admin_users:
+  - username: administrator01
+    password: administrator01
+    email: "administrator01@{{ domain }}"
 
 auditor_users:
   - username: auditor01
     password: auditor01
     email: "auditor01@{{ domain }}"
-  - username: auditor02
-    password: auditor02
-    email: "auditor02@{{ domain }}"
 
 scm_credentials:
   - name: "[TEST] Git Server"

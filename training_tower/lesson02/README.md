@@ -24,12 +24,21 @@ Your free GitHub account gives you unlimited access to public and private softwa
 - Select CREDENTIALS
 - Click on +
 - Complete the credential form using the following entries:
-    -   Name: Studentxx GitHub Credential
+    -   Name: ``<studentxx>`` GitHub Credential
     -   Description: Credentials GitHub
     -   Organization: Default
     -   Type: Source Control
     -   Username: GitHub username
     -   Password: GitHub password
+- Click on SAVE
+- Click on +
+- Complete the credential form using the following entries:
+    -   Name: ``<studentxx>`` Machine Credential
+    -   Description: Machine Credential
+    -   Organization: Default
+    -   Type: Machine
+    -   Username: studentxx
+    -   Password: ``<student_pass>``
 - Click on SAVE
 
 License
