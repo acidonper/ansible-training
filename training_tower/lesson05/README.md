@@ -14,6 +14,8 @@ A job template is a definition and set of parameters for running an Ansible job.
     -   Debug "testvar01" variable content
 -   Click on "Commit new file"
 
+***NOTE: It is important to update Ansible Tower Project or to be selected "update on launch" option in Job Template configuration***
+
 ## Steps
 
 -   Access Ansible Tower Interface
@@ -23,7 +25,7 @@ A job template is a definition and set of parameters for running an Ansible job.
 -   Complete the "Job Template" form using the following entries:
     -   Name: ``<studentxx>``First Job Template
     -   Description: First Job Template
-    -   Organization: Default
+    -   Organization: ``<studentxx>``
     -   Project: ``<studentxx>``First Project
     -   Inventory: ``<studentxx>``First Inventory
     -   Credentials: ``<studentxx>``Machine Credential
@@ -37,9 +39,26 @@ A job template is a definition and set of parameters for running an Ansible job.
     -   Check "Required"
 -   Click on ADD
 -   Click on SAVE
+-   Click on + 
+-   Select "Job Template"
+-   Complete the "Job Template" form using the following entries:
+    -   Name: ``<studentxx>``Second Job Template
+    -   Description: Second Job Template
+    -   Organization: ``<studentxx>``
+    -   Project: ``<studentxx>``Second Project
+    -   Inventory: ``<studentxx>``Second Inventory
+    -   Credentials: ``<studentxx>``Machine Credential
+    -   Playbook: ansible-playbook.yml
+-   Click on ADD SURVEY
+-   Create the following survey items:
+    -   Prompt: Variable01
+    -   Description: First testvar01
+    -   Answer Variable Name: testvar01
+    -   Answer Type: Text
+    -   Check "Required"
+-   Click on ADD
 -   Click on SAVE
--   Execute the new Job Template!!
-
+-   Execute the new Job Templates!!
 
 License
 -------

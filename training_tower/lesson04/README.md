@@ -11,7 +11,7 @@ An Inventory is a collection of hosts against which jobs may be launched, the sa
 -   Complete the credential form using the following entries:
     -   Name: ``<studentxx>`` First Inventory
     -   Description: First Inventory
-    -   Organization: Default
+    -   Organization: ``<studentxx>``
 -   Click on SAVE
 -   Click on HOSTS
 -   Click on + 
