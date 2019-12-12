@@ -3,10 +3,10 @@
 ## Steps Summary
 
 - Create the following users:
-    -   developer01
-    -   developer02
-    -   developer03
-    -   developer04
+    -   ``<studentxx>``-developer01
+    -   ``<studentxx>``-developer02
+    -   ``<studentxx>``-developer03
+    -   ``<studentxx>``-developer04
 - Create the following teams:
     -   teamdevelopers
     -   teamoperators
@@ -17,70 +17,70 @@
 -   Select USERS
 -   Click on + 
 -   Complete "new user" form using the following entries:
-    -   First Name: developer01
-    -   Last Name: developer01
+    -   First Name: ``<studentxx>``-developer01
+    -   Last Name: ``<studentxx>``-developer01
     -   Organization: ``<studentxx>``
-    -   Email: developer01@developer01.com
-    -   UserName: developer01
-    -   Password: developer01
+    -   Email: ``<studentxx>``-developer01@developer01.com
+    -   UserName: ``<studentxx>``-developer01
+    -   Password: ``<studentxx>``-developer01
     -   Confirm Password: **********
 -   Click on SAVE
 -   Click on + 
 -   Complete "new user" form using the following entries:
-    -   First Name: developer02
-    -   Last Name: developer02
+    -   First Name: ``<studentxx>``-developer02
+    -   Last Name: ``<studentxx>``-developer02
     -   Organization: ``<studentxx>``
-    -   Email: developer02@developer02.com
-    -   UserName: developer02
-    -   Password: developer02
+    -   Email: ``<studentxx>``-developer02@developer02.com
+    -   UserName: ``<studentxx>``-developer02
+    -   Password: ``<studentxx>``-developer02
     -   Confirm Password: **********
 -   Click on SAVE
 -   Click on + 
 -   Complete "new user" form using the following entries:
-    -   First Name: operator01
-    -   Last Name: operator01
+    -   First Name: ``<studentxx>``-operator01
+    -   Last Name: ``<studentxx>``-operator01
     -   Organization: ``<studentxx>``
-    -   Email: operator01@operator01.com
-    -   UserName: operator01
-    -   Password: operator01
+    -   Email: ``<studentxx>``-operator01@operator01.com
+    -   UserName: ``<studentxx>``-operator01
+    -   Password: ``<studentxx>``-operator01
     -   Confirm Password: **********
 -   Click on SAVE
 -   Click on + 
 -   Complete "new user" form using the following entries:
-    -   First Name: operator02
-    -   Last Name: operator02
+    -   First Name: ``<studentxx>``-operator02
+    -   Last Name: ``<studentxx>``-operator02
     -   Organization: ``<studentxx>``
-    -   Email: operator02@operator02.com
-    -   UserName: operator02
-    -   Password: operator02
+    -   Email: ``<studentxx>``-operator02@operator02.com
+    -   UserName: ``<studentxx>``-operator02
+    -   Password: ``<studentxx>``-operator02
     -   Confirm Password: **********
 -   Click on SAVE
 
 -   Select TEAMS
 -   Click on + 
 -   Complete "new team" form using the following entries:
-    -   Name: teamdevelopers
-    -   Description: teamdevelopers
+    -   Name: ``<studentxx>``-teamdevelopers
+    -   Description: ``<studentxx>``-teamdevelopers
     -   Organization: ``<studentxx>``
 -   Click on SAVE
 -   Click on + 
 -   Complete "new team" form using the following entries:
-    -   Name: teamoperators
-    -   Description: teamoperators
+    -   Name: ``<studentxx>``-teamoperators
+    -   Description: ``<studentxx>``-teamoperators
     -   Organization: ``<studentxx>``
 -   Click on SAVE
 
 ## BONUS
 
 - Assign users to teams:
-    -   developer01 -> teamdevelopers
-    -   developer02 -> teamdevelopers
-    -   developer03 -> teamoperators
-    -   developer04 -> teamoperators
+    -   ``<studentxx>``-developer01 -> ``<studentxx>``-teamdevelopers
+    -   ``<studentxx>``-developer02 -> ``<studentxx>``-teamdevelopers
+    -   ``<studentxx>``-developer03 -> ``<studentxx>``-teamoperators
+    -   ``<studentxx>``-developer04 -> ``<studentxx>``-teamoperators
 
 - Assign roles to teams:
-    -   Job Templates -> Added teamdevelopers as admin
-    -   Job Templates -> Added teamoperators as execute
+    -   Job Templates -> Added ``<studentxx>``-teamdevelopers as admin
+    -   Job Templates -> Added ``<studentxx>``-teamoperators as execute
 
 - Access and test permissions
 

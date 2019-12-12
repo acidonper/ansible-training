@@ -9,7 +9,7 @@ A job template is a definition and set of parameters for running an Ansible job.
 -   Click on "Create new file"
 -   Introduce "ansible-playbook.yml"
 -   The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
-    -   "Hosts" has to be defined to "all2
+    -   "Hosts" has to be defined to "all"
     -   Define a new variable named "testvar01" with a random content
     -   Debug "testvar01" variable content
 -   Click on "Commit new file"
@@ -25,7 +25,6 @@ A job template is a definition and set of parameters for running an Ansible job.
 -   Complete the "Job Template" form using the following entries:
     -   Name: ``<studentxx>``First Job Template
     -   Description: First Job Template
-    -   Organization: ``<studentxx>``
     -   Project: ``<studentxx>``First Project
     -   Inventory: ``<studentxx>``First Inventory
     -   Credentials: ``<studentxx>``Machine Credential
@@ -44,7 +43,6 @@ A job template is a definition and set of parameters for running an Ansible job.
 -   Complete the "Job Template" form using the following entries:
     -   Name: ``<studentxx>``Second Job Template
     -   Description: Second Job Template
-    -   Organization: ``<studentxx>``
     -   Project: ``<studentxx>``Second Project
     -   Inventory: ``<studentxx>``Second Inventory
     -   Credentials: ``<studentxx>``Machine Credential
