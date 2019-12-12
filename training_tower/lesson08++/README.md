@@ -91,7 +91,7 @@ On the other hand, it is necessary to develop a set of new playbooks in order to
     -   Implement a new task which has to be able to obtain the number of ports httpd is listening
     -   Create a new file named "index.html" in each virtualhost's default folder including the virtualhost's port number (Find and example in ./examples/index.html)
     -   Create a new file named "info.php" in each virtualhost's default folder which displays php info page
-    -   Create a new file named "information.php" in each virtualhost's default folder including the following information:
+    -   Create a new file named "information.html" in each virtualhost's default folder including some information ((Find and example in ./examples/information.html)
 -   Click on "Commit new file" 
 
 ## Important
