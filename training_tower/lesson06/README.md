@@ -33,7 +33,7 @@ In this lab you'll learn how to setup a workflow.
 -   Introduce a new value
 -   Click on NEXT
 -   Click on CONFIRM
--   Select SELECT
+-   Click on SELECT
 -   Click on +
 -   Select ``<studentxx>`` Second Job Template
 -   Select RUN -> Success
