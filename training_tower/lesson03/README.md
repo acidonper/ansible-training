@@ -21,13 +21,13 @@ Your free GitHub account gives you unlimited access to public and private softwa
 -   Select PROJECTS
 -   Click on +
 -   Complete the credential form using the following entries:
-    -   Name: Studentxx First Project
+    -   Name: ``<studentxx>`` First Project
     -   Description: First Project
-    -   Organization: Default
+    -   Organization: ``<studentxx>``
     -   SCM Type: Git
     -   SCM URL: (* Your new Github Repository URL)
     -   SCM Branch: master
-    -   SCM Creadentials: Studentxx GitHub Credential
+    -   SCM Credentials: ``<studentxx>`` GitHub Credential
 -   Click on SAVE
 -   Click on PROJECTS
 -   Click on "Get Latest SCM Version - Icon"

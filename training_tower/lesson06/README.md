@@ -10,3 +10,42 @@ And the workflows are not even limited to Job Templates, but can also include pr
 TIP: This enables new applications for Tower: different Job Templates can build upon each other. E.g. the networking team creates playbooks with their own content, in their own Git repository and even targeting their own inventory, while the operations team also has their own repos, playbooks and inventory.
 
 In this lab you'll learn how to setup a workflow. 
+
+## Prerequisites
+
+-   ``<studentxx>``First Job Template
+-   ``<studentxx>``Second Job Template
+
+## Steps
+
+-   Access Ansible Tower Interface
+-   Select TEMPLATES
+-   Click on + 
+-   Select "Job Template"
+-   Complete the "Workflow Template" form using the following entries:
+    -   Name: ``<studentxx>``First Job Template
+    -   Description: First Job Template
+    -   Organization: ``<studentxx>``
+-   Click on SAVE
+-   Click on START
+-   Select ``<studentxx>``First Job Template
+-   Select SELECT
+-   Click on +
+-   Select ``<studentxx>``Second Job Template
+-   Select RUN -> Success
+-   Select SELECT
+-   Click on SAVE
+-   Execute the new Workflow Template!!
+
+
+License
+-------
+
+BSD
+
+Author Information
+------------------
+
+ Asier Cidon - Cloud Consultant
+
+ asier.cidon@redhat.com

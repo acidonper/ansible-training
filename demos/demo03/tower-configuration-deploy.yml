@@ -23,7 +23,6 @@
         name: "{{ item.name }}"
         description: "{{ item.desc }}"
         state: present
-        # tower_config_file: "./vars/tower_cli.cfg"
         validate_certs: no
         tower_host: "{{ thost }}"
         tower_username: "{{ tuser }}"
@@ -53,6 +52,21 @@
         username: "{{ item.username }}"
         password: "{{ item.password }}"
         email: "{{ item.email }}"
+        state: present
+        validate_certs: no
+        tower_host: "{{ thost }}"
+        tower_username: "{{ tuser }}"
+        tower_password: "{{ tpass }}"
+      loop: "{{ users }}"
+      when:
+        - users is defined
+        - users|length > 0
+
+    - name: Add Tower Users to organization 
+      tower_role:
+        user: "{{ item.username }}"
+        role: "{{ item.role }}"
+        organization: "{{ item.org }}"
         state: present
         validate_certs: no
         tower_host: "{{ thost }}"
