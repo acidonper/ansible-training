@@ -82,7 +82,7 @@ On the other hand, it is necessary to develop a set of new playbooks in order to
 -   Introduce "httpd-virtualhosts-playbook.yml"
 -   The playbook should use tasks to ensure that the following conditions are met on the managed hosts (*using become):
     -   "Hosts" has to be defined to "all"
-    -   Implement a new task which has to be able to create a set of virtualhost provided by a new variable named "virtualhost_ports" (80 and 81 by default)
+    -   Implement a new task which has to be able to create a set of virtualhosts provided by a new variable named "virtualhost_ports" (80 and 81) in /var/www/html/service-``<port>`` folders
 -   Click on "Commit new file" 
 -   Click on "Create new file"
 -   Introduce "httpd-content-playbook.yml"
