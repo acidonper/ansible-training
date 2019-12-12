@@ -181,7 +181,9 @@ To achieve this objective, it will also necessary to include all Job Templates c
 -   Click on CONFIRM
 -   **Select in RUN field ->  On Failure**
 -   Click on SELECT
+
 ***Please repeate the following proceess wih the remaining Job Templates***
+
 -   Select [LESSON08] ``<studentxx>`` Job Template ``<playbook_name>.yml``
 -   Click on PROMPT (* If it is required)
 -   Introduce a new value (* If it is required)
@@ -189,6 +191,7 @@ To achieve this objective, it will also necessary to include all Job Templates c
 -   Click on CONFIRM (* If it is required)
 -   Click on SELECT
 ...
+
 -   Click on SAVE
 -   Execute the new Workflow Template!!
 
