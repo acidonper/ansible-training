@@ -144,6 +144,7 @@ Firstly, it is necessary to create a new "Job Template" for each new playbook in
 Now is the time to integrate all Job Templates. For this reason, it is necessary to create a new Workflow Template and add all Job Templated created in order to:
 
 -   Create five new users (``<studentxx>``-user01...``<studentxx>``-user05)
+-   Execute fail-playbook.yml Job Template
 -   Install/configure ntp server (us.pool.ntp.org)
 -   Install mysql server
 -   Restart mysql server
