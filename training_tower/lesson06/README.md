@@ -21,18 +21,26 @@ In this lab you'll learn how to setup a workflow.
 -   Access Ansible Tower Interface
 -   Select TEMPLATES
 -   Click on + 
--   Select "Job Template"
+-   Select "Workflow Template"
 -   Complete the "Workflow Template" form using the following entries:
     -   Name: ``<studentxx>``First Job Template
     -   Description: First Job Template
     -   Organization: ``<studentxx>``
 -   Click on SAVE
 -   Click on START
--   Select ``<studentxx>``First Job Template
+-   Select ``<studentxx>`` First Job Template
+-   Click on PROMPT
+-   Introduce a new value
+-   Click on NEXT
+-   Click on CONFIRM
 -   Select SELECT
 -   Click on +
--   Select ``<studentxx>``Second Job Template
+-   Select ``<studentxx>`` Second Job Template
 -   Select RUN -> Success
+-   Click on PROMPT
+-   Introduce a new value
+-   Click on NEXT
+-   Click on CONFIRM
 -   Select SELECT
 -   Click on SAVE
 -   Execute the new Workflow Template!!
