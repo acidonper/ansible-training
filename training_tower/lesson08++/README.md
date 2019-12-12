@@ -8,8 +8,11 @@ From an overall point of view, this new project has to implement the folowing ta
 -   Install mariadb
 -   Up and Enable mariadb service
 -   Install httpd
+-   Up and Enable httpd service
+
+**BONUS**
+
 -   Configure httpd in order to create two new virtualHosts in ports (80 and 81)
--   Up and Enable mariadb service
 -   Create dynamically web pages in Apache folders
 
 ## Prerequisites
