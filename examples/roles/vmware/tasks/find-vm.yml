@@ -1,0 +1,20 @@
+- name: '[VMWARE][VM-FIND] Find VM'
+  vmware_guest_find:
+    hostname: "{{ vmware_srv }}"
+    username: "{{ vmware_user }}"
+    password: "{{ vmware_pass }}"
+    name: "{{ vm_name }}"
+    validate_certs: no
+  register: vmware_path
+
+- debug:
+    var: vmware_path
+    verbosity: 1
+
+- set_fact:
+    vmware_dc: "{{ vmware_path.folders[0].split('/')[1].split('/')[0] }}"
+    vmware_folder: "{{ vmware_path.folders[0] }}"
+
+- debug:
+    msg: "DC: {{ vmware_dc }} ; Folder: {{ vmware_folder }}"
+    verbosity: 1

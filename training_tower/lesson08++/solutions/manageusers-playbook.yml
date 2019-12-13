@@ -1,0 +1,24 @@
+- hosts: all
+  become: true
+
+  vars:
+    - users: 
+      - user01
+    - file: user_created_date.txt
+
+  tasks:
+
+  - name: Create user
+    user:
+      name: "{{ item }}"
+      password: "{{ item }}"
+    loop: "{{ users }}"
+
+  - name: Create user file
+    copy:
+      dest: "/home/{{ item }}/{{ file }}"
+      owner: "{{ item }}"
+      group: "{{ item }}"
+      mode: 0644
+      content: "{{ ansible_date_time.iso8601 }}"
+    loop: "{{ users }}"

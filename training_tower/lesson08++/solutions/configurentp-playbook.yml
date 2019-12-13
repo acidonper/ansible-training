@@ -1,0 +1,24 @@
+- hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    timesync_ntp_servers:
+      - hostname: time.google.com
+
+  pre_tasks:
+    - name: Install rhel-system-roles
+      package:
+        name: rhel-system-roles
+        state: latest
+
+  roles:
+
+    - name: rhel-system-roles.timesync
+
+
+
+        
+      
+
+    

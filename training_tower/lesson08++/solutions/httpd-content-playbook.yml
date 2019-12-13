@@ -1,0 +1,31 @@
+---
+- hosts: all
+  become: true
+
+  vars:
+    virtualhost_ports:
+      - 80
+      - 81
+
+  tasks:
+
+    - name: Fetch httpd file content 
+      slurp:
+        src: /etc/httpd/conf/httpd.conf
+      register: httpd_config
+
+    - set_fact:
+        current_ports: "{{ httpd_config['content'] | b64decode | regex_findall('\nListen [0-99999]{1,5}') }}"
+
+    - name: Create index.html file
+      template:
+        src: index.html.j2
+        dest: "/var/www/html/service-{{ item | regex_search('[0-99999]{1,5}') }}/index.html"
+      loop: "{{ current_ports }}"
+
+    - name: Create information.html file
+      template:
+        src: information.html.j2
+        dest: "/var/www/html/service-{{ item | regex_search('[0-99999]{1,5}') }}/information.html"
+      loop: "{{ current_ports }}"
+          

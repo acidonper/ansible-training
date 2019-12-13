@@ -1,0 +1,22 @@
+- hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    httpd_service_state: restarted
+
+  tasks:
+
+    - name: "Fail when a service state is not supported"
+      fail:
+        msg: "Service state {{ httpd_service_state }} is not supported"
+      when: 
+        - httpd_service_state != 'started'
+        - httpd_service_state != 'restarted'
+        - httpd_service_state != 'stopped'
+        - httpd_service_state != 'reloaded'
+
+    - name: Manage httpd service
+      service:
+        name: httpd
+        state: "{{ mysql_service_state }}"

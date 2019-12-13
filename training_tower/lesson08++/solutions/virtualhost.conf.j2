@@ -1,0 +1,4 @@
+<VirtualHost *:{{ item }}>
+    DocumentRoot "/var/www/html/service-{{ item }}"
+    ServerName {{ ansible_hostname }}
+</VirtualHost>

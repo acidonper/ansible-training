@@ -1,0 +1,22 @@
+- hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    mysql_service_state: restarted
+
+  tasks:
+
+    - name: "Fail when a service state is not supported"
+      fail:
+        msg: "Service state {{ mysql_service_state }} is not supported"
+      when: 
+        - mysql_service_state != 'started'
+        - mysql_service_state != 'restarted'
+        - mysql_service_state != 'stopped'
+        - mysql_service_state != 'reloaded'
+
+    - name: Manage mariadb-server service
+      service:
+        name: mariadb
+        state: "{{ mysql_service_state }}"
