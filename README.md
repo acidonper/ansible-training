@@ -24,10 +24,30 @@ Amazon Web Services (AWS) is a subsidiary of Amazon that provides on-demand clou
 
 As you might know, Red Hat Ansible community supports several AWS modules which allow final customers to define and deploy multiples computing resources in this provider. In that way, this training makes use of these modules to deploy and destroy the environment dynamically based on number of users and resources the training needs.
 
+This laboratory creates a complete environment which is ready to install an Ansible Tower and supports the implementation of proposed lessons in this training. The following list includes a summary about this environment:
+
+-   30 instances for students
+-   1 instance designed to support some Ansible Core's lessons
+-   4 instances for install an Ansible Tower cluster 
+
+In order to deploy this environment and make it available to execute training's lessons, it is necessary to follow the next steps: 
+
 -   Deploy Red Hat Ansible Training Environment
 ```
 $ ansible-playbook aws-iac.yaml
 ```
+
+-   Configure Red Hat Ansible Training Environment
+```
+$ ansible-playbook aws-context-rhel-environment.yaml --ask-vault-pass
+```
+
+-   Obtain Red Hat Ansible Training Environment inventory
+```
+$ ansible-playbook aws-generate-inventory.yaml
+```
+
+Once the training is completed:
 
 -   Destroy Red Hat Ansible Training Environment
 ```

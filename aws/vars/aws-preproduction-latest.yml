@@ -81,15 +81,15 @@ security_groups:
 
 ## Instances definition
 instances:
-    # - name: classroom
-    #   key: ansiblepoc
-    #   ami: ami-04facb3ed127a2eb6
-    #   type: t2.micro
-    #   subnet: subnet1-az1
-    #   groups:
-    #     - ssh_rule
-    #     - http_rule
-    #     - mysql_rule
+    - name: classroom
+      key: ansiblepoc
+      ami: ami-04facb3ed127a2eb6
+      type: t2.micro
+      subnet: subnet1-az1
+      groups:
+        - ssh_rule
+        - http_rule
+        - mysql_rule
 
     - name: student01
       key: ansiblepoc
@@ -291,16 +291,6 @@ instances:
           - http_rule
           - mysql_rule
 
-    - name: student20
-      key: ansiblepoc
-      type: t2.micro
-      ami: ami-04facb3ed127a2eb6
-      subnet: subnet1-az1
-      groups:
-          - ssh_rule
-          - http_rule
-          - mysql_rule
-
     - name: student21
       key: ansiblepoc
       type: t2.micro
@@ -362,6 +352,36 @@ instances:
           - mysql_rule
 
     - name: student27
+      key: ansiblepoc
+      type: t2.micro
+      ami: ami-04facb3ed127a2eb6
+      subnet: subnet1-az1
+      groups:
+          - ssh_rule
+          - http_rule
+          - mysql_rule
+
+    - name: student28
+      key: ansiblepoc
+      type: t2.micro
+      ami: ami-04facb3ed127a2eb6
+      subnet: subnet1-az1
+      groups:
+          - ssh_rule
+          - http_rule
+          - mysql_rule
+
+    - name: student29
+      key: ansiblepoc
+      type: t2.micro
+      ami: ami-04facb3ed127a2eb6
+      subnet: subnet1-az1
+      groups:
+          - ssh_rule
+          - http_rule
+          - mysql_rule
+
+    - name: student30
       key: ansiblepoc
       type: t2.micro
       ami: ami-04facb3ed127a2eb6
