@@ -13,24 +13,32 @@ Folder Structure
 
 A folder structure is provided in this repository in order to split laboratory content and improve the clarity of the training. The following folders have been included with a specific objective:
 
--   aws -> Includes environment a set up automatism in order to deploy and destroy laboratory environments.
--   example -> Includes son Ansible playbooks and roles which could be useful in a future steps.
--   training -> Lessons structure which includes specific exercises with solutions.
+-   aws -> Includes AWS environment's set up automatism in order to deploy and destroy Red Hat Ansible's laboratory environments.
+-   iac_tower -> Includes Red Hat Ansible Tower configuration as a code. 
+-   examples -> Includes son Ansible playbooks and roles which could be useful in a future steps.
+-   training -> Lessons structure which includes Red Hat Ansible Engine's specific exercises with solutions.
+-   training_tower -> Lessons structure which includes specific Red Hat Ansible Tower's exercises with solutions.
 
 Laboratory Environment
 ------------------------
 
 Amazon Web Services (AWS) is a subsidiary of Amazon that provides on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis.
 
-As you might know, Red Hat Ansible community supports several AWS modules which allow final customers to define and deploy multiples computing resources in this provider. In that way, this training makes use of these modules to deploy and destroy the environment dynamically based on number of users and resources the training needs.
+As you might know, Red Hat Ansible's community supports several AWS modules which allow final customers to define and deploy multiples computing resources in this provider. In that way, this training makes use of these modules to deploy and destroy the environment dynamically based on number of users and resources.
 
-This laboratory creates a complete environment which is ready to install an Ansible Tower and supports the implementation of proposed lessons in this training. The following list includes a summary about this environment:
+This laboratory creates a complete environment which is ready to install an Red Hat Ansible Engine and Red Hat Ansible Tower. On the other hand, it also supports the implementation of proposed lessons in this training. 
+
+The following list includes a summary about this environment:
 
 -   30 instances for students
 -   1 instance designed to support some Ansible Core's lessons
 -   4 instances for install an Ansible Tower cluster 
 
 In order to deploy this environment and make it available to execute training's lessons, it is necessary to follow the next steps: 
+
+```
+$ cd aws
+```
 
 -   Deploy Red Hat Ansible Training Environment
 ```
@@ -54,16 +62,7 @@ Once the training is completed:
 $ ansible-playbook aws-iac-destroy.yaml 
 ```
 
-Demos 
----------
-
-Demos folder includes a set of ansible implementation examples. The following list includes a summary:
-
--   **Demo1** - Install Ansible Tower
--   **Demo2** - Navigate Ansible Tower Interface
--   **Demo3** - Ansible Tower Configuration as a Code
-
-Lessons 
+Red Hat Ansible Engine Lessons
 ---------
 
 Training folder includes The following list includes a lessons summary:
@@ -83,6 +82,21 @@ Training folder includes The following list includes a lessons summary:
 -   **Lesson 13** - Ansible Filters
 -   **Lesson 14** - Ansible Modules
 -   **Lesson 15** - Ansible Lookups, Callbacks & Tags
+
+Red Hat Ansible Tower Lessons
+---------
+
+Training folder includes The following list includes a lessons summary:
+
+-   **Lesson 1** - Install Ansible Tower
+-   **Lesson 2** - Credentials
+-   **Lesson 3** - Projects
+-   **Lesson 4** - Inventories
+-   **Lesson 5** - Job Templates
+-   **Lesson 6** - Workflow Templates
+-   **Lesson 7** - Ansible Tower Role Based Access Control
+-   **Lesson 8** - Emulate a Real Ansible Tower Project (Bonus)
+
 
 License
 -------
