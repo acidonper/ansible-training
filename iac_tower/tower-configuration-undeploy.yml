@@ -1,3 +1,7 @@
+##
+# ansible-playbook -i inventory tower-configuration-undeploy.yml -k -K
+##
+
 - hosts: ansibletower
   user: studentxx
   become: yes
