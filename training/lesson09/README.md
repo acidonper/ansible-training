@@ -19,8 +19,8 @@ In order to assist this laboratory implementation, a set of resources have been 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
 -   Create a playbook named "tools-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
     -   Define the following variables:
-        -   User name variable named "mysql_name" with "testuser01"
-        -   User pass variable named "mysql_pass" with "testuser01"
+        -   User name variable named "mysql_user" with "testuser01"
+        -   User pass variable named "mysql_pass" with "password01"
         -   User pass variable named "mysql_db" with "testdb01"
         -   Client IP variable named "mysql_client_ip" with <ip_classroom_instance>
         -   List or Array of packages named "mysql_packages" with "mysql-server" and "python3-PyMySQL" included

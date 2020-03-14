@@ -8,21 +8,20 @@
   user: student15
   
   vars:
-    - packages:
-        - mariadb-server
-        - python3-PyMySQL
     - mysql_user: testuser01
-    - mysql_pass: testuser01
+    - mysql_pass: password01
     - mysql_db: testdb01
     - mysql_client_ip: 172.31.1.8
+    - mysql_packages:
+        - mariadb-server
+        - python3-PyMySQL
 
   tasks:
     - name: Install Mysql Server
       package:
-        name: "{{ item }}"
+        name: "{{ mysql_packages }}"
         state: present
       register: operation
-      loop: "{{ packages }}"
 
     - name: Start service mysql
       service:
