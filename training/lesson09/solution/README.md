@@ -7,14 +7,14 @@ You can pass a list directly to a parameter for some plugins. Most of the packag
 ```
 - name: optimal yum
   yum:
-    name: "{{  list_of_packages  }}"
+    name: "{{ list_of_packages }}"
     state: present
 
 - name: non-optimal yum, slower and may cause issues with interdependencies
   yum:
-    name: "{{  item  }}"
+    name: "{{ item }}"
     state: present
-  loop: "{{  list_of_packages  }}"
+  loop: "{{ list_of_packages }}"
 ```
 
 ## Useful Links
