@@ -16,16 +16,17 @@ In order to assist this laboratory implementation, a set of resources have been 
 ## Steps
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
--   Create a playbook named "roles-playbook.yml" using "myinstance" as a hosts parameter and `<studentxx>` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
+-   Create a playbook named "filters-playbook.yml" using "myinstance" as a hosts parameter and `<studentxx>` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
+    -   Define ip_array var with the following content:
+        -   192.168.1.1
+        -   192.16.2,2
+        -   192.168.23.32
+        -   false
     -   Read "dictionary.json" file and register the content in a new variable
     -   Parse the new variable content to an ansible dictionary
     -   Search cluster names and print the result
     -   Search servers names and print the result
     -   Search libraries names and print the result
-    -   Set a new fact with an IPs arrays with the following content:
-        -   192.168.1.1
-        -   192.16.2,2
-        -   192.168.23.32
     -   Test each array IP item in order to validate the IP address. If one of them is not valid, this tasks has to throw an error. 
     -   Extract *path*, *port* and *hostname* from the following url:
         -   http://user:password@www.acme.com:9000/dir/index.html?query=term#fragment
