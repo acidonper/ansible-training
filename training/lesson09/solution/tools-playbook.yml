@@ -10,11 +10,13 @@
   vars:
     - mysql_user: testuser01
     - mysql_pass: password01
-    - mysql_db: testdb01
+    - mysql_db:
+      - testdb01
+      - testdb02
     - mysql_client_ip: 172.31.1.8
     - mysql_packages:
-        - mariadb-server
-        - python3-PyMySQL
+      - mariadb-server
+      - python3-PyMySQL
 
   tasks:
     - name: Install Mysql Server
@@ -35,12 +37,13 @@
         state: restarted
       when: operation is not changed
 
-    - name: Create a new database
+    - name: Create new databases
       mysql_db:
-        name: "{{ mysql_db }}"
+        name: "{{ item }}"
         state: present
+      loop: "{{ mysql_db }}"
 
-    - name: Create a new mysql user
+    - name: Create a new mysql user on both databases
       mysql_user:
         name: "{{ mysql_user }}"
         password: "{{ mysql_pass }}"
@@ -48,21 +51,23 @@
         priv: '{{ mysql_db }}.*:ALL,GRANT'
         host: "{{ mysql_client_ip }}"
         state: present
+      loop: "{{ mysql_db }}"
 
-    - name: Copy usertable.mysl file to target Server
+    - name: Copy usertable.mysql file to target server
       become: false
       copy:
         src: "./usertable.mysql"
         dest: "/home/{{ ansible_user }}/usertable.mysql"
       delegate_to: "{{ mysql_client_ip }}"
 
-    - name: Create a new database
+    - name: Import usertable.mysql
       become: false
       mysql_db:
-        name: "{{ mysql_db }}"
+        name: "{{ item }}"
         state: import
         target: "/home/{{ ansible_user }}/usertable.mysql"
         login_host: "{{ ansible_host }}"
         login_user: testuser01
         login_password: testuser01
       delegate_to: "{{ mysql_client_ip }}"
+      loop: "{{ mysql_db }}"
