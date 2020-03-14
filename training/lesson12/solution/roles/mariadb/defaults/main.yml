@@ -4,5 +4,4 @@
 mysql_users: 
   - test01
 
-mysql_databases:
-  - testroles01
+mysql_database: testroles01
