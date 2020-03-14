@@ -8,8 +8,8 @@
   user: studentxx
 
   vars:
-    test_dict: "{{lookup('file', 'dictionaryyyy.json', errors='warn') | from_json }}"
-    dict_content: "{{lookup('file', 'dictionary.json', errors='warn')}}"
+    test_dict: "{{lookup('file', 'dictionaryyyy.json', errors='warn')}}"
+    dict_content: "{{lookup('file', 'dictionary.json', errors='warn') | from_json }}"
     
   tasks:
     - debug:

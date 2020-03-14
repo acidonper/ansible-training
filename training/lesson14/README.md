@@ -1,6 +1,6 @@
 # Ansible Modules
 
-Ansible Modules are a reusable, standalone scripts that Ansible runs on your behalf, either locally or remotely.
+Ansible Modules are reusable, standalone scripts that Ansible runs on your behalf, either locally or remotely.
 
 There are some use cases which require new modules because Ansible community does not satisfy their requirements or it is necessary to fork some implemented module in order to extend or modify its features.
 
