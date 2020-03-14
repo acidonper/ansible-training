@@ -2,6 +2,7 @@
 # Example: ansible-playbook -i inventory facts-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
@@ -20,7 +21,7 @@
         option: haproxy_ip
         value: 192.168.123.123
     
-    - name: Debug haproxy_ip
+    - name: Print haproxy_ip
       debug:
         var: ansible_local.custom.haproxy.haproxy_ip
 
@@ -28,6 +29,6 @@
       set_fact:
         life_variable: "{{ ansible_date_time }}"
 
-    - name: Debug life_variable
+    - name: Print life_variable
       debug:
         var: life_variable

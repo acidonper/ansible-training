@@ -12,9 +12,9 @@ In order to understand this lesson properly, a set of steps have been designed t
 -   Create a playbook named "facts-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
     - Create a folder /named "etc/ansible/facts.d"
     - Create a custom facts "/etc/ansible/facts.d/custom.fact" file with a variable named "haproxy_ip" which includes instance ip
-    - Debug local facts "haproxy_ip"
+    - Print local facts "haproxy_ip"
     - Create a new variable named "life_variable" with date content
-    - Debug variable "life_variable"
+    - Print variable "life_variable"
 -   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 
@@ -38,3 +38,4 @@ Author Information
  Asier Cidon - Cloud Consultant
 
  asier.cidon@redhat.com
+ 

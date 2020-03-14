@@ -2,6 +2,7 @@
 # Example: ansible-playbook -i inventory lookup-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
@@ -16,4 +17,3 @@
 
     - debug:
         var: dict_content
-

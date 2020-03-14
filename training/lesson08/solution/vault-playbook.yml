@@ -2,6 +2,7 @@
 # Example: ansible-playbook -i inventory vault-playbook.yml -k -K --ask-vault-pass
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx

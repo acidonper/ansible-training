@@ -2,6 +2,7 @@
 # Example: ansible-playbook -i inventory templates-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
