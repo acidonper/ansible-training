@@ -2,11 +2,12 @@
 # Example: ansible-playbook -i inventory tags-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
   tasks:
-    - name: Debug message
+    - name: Print message
       debug:
         msg: "It is working"
       tags:

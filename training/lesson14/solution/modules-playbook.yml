@@ -2,8 +2,7 @@
 # Example: ansible-playbook -i inventory modules-playbook.yml -k
 ##
 
-#- hosts: myinstance
-#  user: studentxx
+---
 - hosts: localhost
   connection: local
   tasks:

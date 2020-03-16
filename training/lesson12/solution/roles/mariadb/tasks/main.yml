@@ -6,18 +6,17 @@
     name: mariadb-server
     state: latest
 
-- name: Start and Enable mariadb service
+- name: Start and enable mariadb service
   service:
     name: mariadb
     state: started
     enabled: yes
 
-- name: Create testroles01 database
+- name: Create database
   mysql_db:
-    name: "{{ item }}"
-  loop: "{{ mysql_databases }}"
+    name: "{{ mysql_database }}"
 
-- name: Create Users
+- name: Create users
   include_tasks: create_mariadb_user.yml
   loop: "{{ mysql_users }}"
   loop_control: 

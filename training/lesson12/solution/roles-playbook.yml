@@ -2,10 +2,17 @@
 # Example: ansible-playbook -i inventory roles-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
   roles:
-    - { role: mariadb, vars: { mysql_users: ["test01","test02","test03"] } } 
+    - role: mariadb
+      vars:
+        mysql_users: ["test01","test02","test03"] 
     - nginxinc.nginx 
-    - { role: rhel-system-roles.timesync, vars: { timesync_ntp_servers : [ { hostname: 'time.google.com', iburst: 'yes' } ] } }
+    - role: rhel-system-roles.timesync
+      vars:
+        timesync_ntp_servers:
+          - hostname: 'time.google.com'
+            iburst: 'yes'
