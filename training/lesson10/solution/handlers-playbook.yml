@@ -11,25 +11,27 @@
 
     - block:
 
-      - name: Install Apache Packages
-        package:
-          name: httpd
-          state: present
-        notify: Restart httpd service
-
-      - name: Copy Apache config file
-        copy:
-          src: httpd.conf
-          dest: /etc/httpd/httpd.conf
-        notify: Restart httpd service
+        - name: Install apache2 package
+          package:
+            name: apache2
+            state: present
+          notify: Restart httpd service
 
       rescue:
 
-        - name: Print error message
-          debug:
-            msg: "Could not install httpd package. Continue installing php"
+        - name: Install httpd package
+          package:
+            name: httpd
+            state: present
+          notify: Restart httpd service
 
       always:
+
+        - name: Copy Apache config file
+          copy:
+            src: httpd.conf
+            dest: /etc/httpd/httpd.conf
+          notify: Restart httpd service
 
         - name: Install php package
           package:

@@ -21,21 +21,25 @@ In order to assist this laboratory implementation, a set of resources have been 
 -   Create a file named "index.php" with phpinfo() function included
 -   Create a playbook named "handlers-playbook.yml" using "myinstance" as a hosts parameter and ``<studentxx>`` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
     -   Implement a block with the following tasks:
+        -   Install "apache2" package
+    -   If any of the previous tasks fail, implement the following tasks:
         -   Install "httpd" package
-        -   Copy httpd configuration file named "httpd.conf" to "/etc/httpd/conf/httpd.conf"
-    -   If any of previous tasks fail, implement the the following tasks:
-        -   Print a message saying "Could not install httpd package, continue installing php"
     -   In any case, the following tasks need to be executed under the block:
+        -   Copy httpd configuration file named "httpd.conf" to "/etc/httpd/conf/httpd.conf"
         -   Install "php" package
         -   Create a new folder "php" in "/var/www/html"
         -   Copy php file named "index.php" to "/var/www/html/php"
-    -   NOTE: It is important to bear in mind that it is necessary restart httpd service when a new package or package version is installed or configuration file modified
+    -   NOTE: It is important to bear in mind that it is necessary to restart httpd service when a new package or package version is installed or configuration file modified
 -   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the apache server
 -   Modify the content of the configuration file to listen in port 82
 -   Run the playbook!
 -   Test the apache server
+
+## Notes
+
+Package name differences betwen distributions are usually handled using conditionals and the facts provided by the machine. In this lesson we use blocks instead for demonstrative purposes.
 
 ## Useful Links
 

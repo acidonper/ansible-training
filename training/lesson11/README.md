@@ -24,7 +24,7 @@ In order to assist this laboratory implementation, a set of resources have been 
     -   Create new folders based on port number (Example: "ansible-service-``<port>``") in "/var/www/html"
     -   Copy HTML template page named "index.html.j2" in each "/var/www/html/ansible-service-``<port>``"
     -   Copy apache configuration template named "httpd.conf.j2" to "/etc/httpd/conf/httpd.conf"
-    -   NOTE: It is important to bear in mind that it is necessary restart httpd service when a new package or package version is installed or configuration file modified
+    -   NOTE: It is important to bear in mind that it is necessary to restart httpd service when a new package or package version is installed or configuration file modified
 -   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
 -   Run the playbook!
 -   Test the apache server
