@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+
+    - name: Copy python to specified path
+      ansible.windows.win_copy:
+        src: ./bin/python-3.7.0.exe
+        dest: 'c:\Users\{{ azure_win_username }}\Desktop\python-3.7.0.exe'
+        force: no
+
+    - name: Copy script with template
+      ansible.windows.win_copy:
+        content: "{{ lookup('template', './templates/install-python.ps1') }}"
+        dest: 'c:\Users\{{ azure_win_username }}\Desktop\install-python.ps1'

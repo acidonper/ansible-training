@@ -1,0 +1,5 @@
+- hosts: all
+  tasks:
+
+    - name: Execute python install PS1
+      win_shell: 'c:\Users\{{ azure_win_username }}\Desktop\install-python.ps1'

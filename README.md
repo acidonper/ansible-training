@@ -17,7 +17,9 @@ A folder structure is provided in this repository in order to split laboratory c
 -   iac_tower -> Includes Red Hat Ansible Tower configuration as a code. 
 -   examples -> Includes son Ansible playbooks and roles which could be useful in a future steps.
 -   training -> Lessons structure which includes Red Hat Ansible Engine's specific exercises with solutions.
+-   training_microsoft -> Lessons structure which includes specific Red Hat Ansible Tower's exercises focus on Azure environment and Microsoft Servers administration.
 -   training_tower -> Lessons structure which includes specific Red Hat Ansible Tower's exercises with solutions.
+
 
 Laboratory Environment
 ------------------------
@@ -61,6 +63,12 @@ Once the training is completed:
 ```
 $ ansible-playbook aws-iac-destroy.yaml 
 ```
+
+---
+**NOTE**
+
+Red Hat Automation Platform & Microsoft Training is based on Azure Environment which has to be deployed and configured previously. For this reason, it is not required to deploy the AWS environment. 
+---
 
 Red Hat Ansible Engine Lessons
 ---------

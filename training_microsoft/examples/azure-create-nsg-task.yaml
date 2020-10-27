@@ -1,0 +1,27 @@
+- name: Create Network Security Group
+  azure_rm_securitygroup:
+    resource_group: "{{ tower_user_name }}-rg"
+    name: "{{ tower_user_name }}-nsg"
+    rules:
+      - name: 'allow_rdp'
+        protocol: Tcp
+        destination_port_range: 3389
+        access: Allow
+        priority: 1001
+        direction: Inbound
+      - name: 'allow_web_traffic'
+        protocol: Tcp
+        destination_port_range:
+          - 80
+          - 443
+        access: Allow
+        priority: 1002
+        direction: Inbound
+      - name: 'allow_ansible'
+        protocol: Tcp
+        destination_port_range:
+          - 5985
+          - 5986
+        access: Allow
+        priority: 1003
+        direction: Inbound

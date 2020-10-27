@@ -1,0 +1,4 @@
+- name: Download Python binary
+  win_get_url:
+    url: "https://github.com/acidonper/ansible-training/blob/master/README.md"
+    dest: 'C:\Users\azureuser\Desktop\README.md'

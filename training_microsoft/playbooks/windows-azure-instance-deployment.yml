@@ -1,0 +1,51 @@
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Deploy Windows10 on azure for the WinRM
+      ignore_errors: yes
+      azure.azcollection.azure_rm_deployment:
+        state: present
+        name: "{{ tower_user_name }}"
+        location: "{{ azure_location }}"
+        resource_group_name: "{{ azure_resource_group }}"
+        template: "{{ lookup('file', 'azure-win10-template.json')}}"
+        parameters:
+          adminUsername:
+            value: "{{ azure_win_username }}"
+          adminPassword:
+            value: "{{ azure_win_password }}"
+          publicIPAllocationMethod:
+            value: Dynamic
+          publicIpSku:
+            value: Basic
+          OSVersion:
+            value: "{{ win_os_version | default('2016-Datacenter') }}"
+          vmSize:
+            value: "{{ win_vm_size | default('Standard_D2_v3') }}"
+          location:
+            value: "{{ azure_location }}"
+          vmName:
+            value: "{{ tower_user_name }}"
+          virtualNetworkName:
+            value: "{{ azure_vnet_name }}"
+          subnetName:
+            value: "{{ azure_subnet_name }}"
+          storageAccountName:
+            value: "{{ azure_storage_name}}"
+          networkSecurityGroupName:
+            value: "{{ azure_storage_name}}"
+          subnetPrefix:
+            value: "{{ azure_subnet_prefix }}"
+          subnetPrefix:
+            value: "{{ azure_subnet_prefix }}"
+
+
+    - name: Get facts for one Public IP
+      azure_rm_publicipaddress_info:
+        resource_group: "{{ azure_resource_group }}"
+        name: "{{ tower_user_name }}myIP"
+      register: output_ip_address
+
+    - name: Output public IP
+      debug:
+        msg: "The public IP is {{ output_ip_address.publicipaddresses[0].ip_address }}. Used to connect with RDP"

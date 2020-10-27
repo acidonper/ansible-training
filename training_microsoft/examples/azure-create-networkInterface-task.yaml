@@ -1,0 +1,13 @@
+- name: Create a network interface with public and private IP
+  azure_rm_networkinterface:
+    name: "{{ win10_nic }}"
+    resource_group: "{{ tower_user_name }}-rg"
+    virtual_network: "test01_group-vnet"
+    subnet_name: "default"
+    security_group: "{{ tower_user_name }}-nsg"
+    ip_configurations:
+      - name: "{{ win10_private_nic }}"
+        public_ip_address_name: "{{ tower_user_name }}"
+        primary: True
+        private_ip_allocation_method: Static
+        private_ip_address: "{{ win10_private_ip  }}"

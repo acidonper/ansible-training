@@ -1,0 +1,10 @@
+- name: Create public IP address
+  azure_rm_publicipaddress:
+    resource_group: "{{ tower_user_name }}-rg"
+    allocation_method: Static
+    name: "{{ tower_user_name }}"
+  register: output_ip_address
+
+- name: Output public IP
+  debug:
+    msg: "The public IP is {{ output_ip_address.state.ip_address }}. Used to connect with RDP"
