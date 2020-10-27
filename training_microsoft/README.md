@@ -19,10 +19,10 @@ training -> Lessons structure which includes Red Hat Automation Platform's speci
 
 Training folder includes The following list includes a lessons summary:
 
-* **Lesson 1** - Prerequisites (Creating a GitHub account and testing Red Hat Automation Platform access)
-* **Lesson 2** - Credentials (Adding VMs credentials)
-* **Lesson 3** - Projects (Using GitHub repositories)
-* **Lesson 4** - Inventories (Synchronizing Azure Repositories)
-* **Lesson 5** - Job Templates (Creating Azure VMs)
-* **Lesson 6** - Workflow Templates (Implementing a production deployment use case in Azure)
-* **Lesson 7** - Job Templates (*BONUS* - Create a SQL Database)
+* [**Lesson 1**](./training/lesson01/README.md) - Prerequisites (Creating a GitHub account and testing Red Hat Automation Platform access)
+* [**Lesson 2**](./training/lesson02/README.md) - Credentials (Adding VMs credentials)
+* [**Lesson 3**](./training/lesson03/README.md) - Projects (Using GitHub repositories)
+* [**Lesson 4**](./training/lesson04/README.md) - Inventories (Synchronizing Azure Repositories)
+* [**Lesson 5**](./training/lesson05/README.md) - Job Templates (Creating Azure VMs)
+* [**Lesson 6**](./training/lesson06/README.md) - Workflow Templates (Implementing a production deployment use case in Azure)
+* [**Lesson 7**](./training/lesson07/README.md) - Job Templates (*BONUS* - Create a SQL Database)

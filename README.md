@@ -64,10 +64,12 @@ Once the training is completed:
 $ ansible-playbook aws-iac-destroy.yaml 
 ```
 
+
 ---
 **NOTE**
 
 Red Hat Automation Platform & Microsoft Training is based on Azure Environment which has to be deployed and configured previously. For this reason, it is not required to deploy the AWS environment. 
+
 ---
 
 Red Hat Ansible Engine Lessons
@@ -75,35 +77,40 @@ Red Hat Ansible Engine Lessons
 
 Training folder includes The following list includes a lessons summary:
 
--   **Lesson 1** - Install Ansible
--   **Lesson 2** - Configure Ansible
--   **Lesson 3** - Ansible AdHoc Commands
--   **Lesson 4** - Ansible Inventory
--   **Lesson 5** - Ansible Playbooks
--   **Lesson 6** - Ansible Variable
--   **Lesson 7** - Ansible Facts
--   **Lesson 8** - Ansible Vault
--   **Lesson 9** - Ansible Conditionals, loops and delegation
--   **Lesson 10** - Ansible Handlers
--   **Lesson 11** - Ansible Templates
--   **Lesson 12** - Ansible Roles
--   **Lesson 13** - Ansible Filters
--   **Lesson 14** - Ansible Modules
--   **Lesson 15** - Ansible Lookups, Callbacks & Tags
+-   [**Lesson 1**](./training/lesson01/README.md) - Install Ansible
+-   [**Lesson 2**](./training/lesson02/README.md) - Configure Ansible
+-   [**Lesson 3**](./training/lesson03/README.md) - Ansible AdHoc Commands
+-   [**Lesson 4**](./training/lesson04/README.md) - Ansible Inventory
+-   [**Lesson 5**](./training/lesson05/README.md) - Ansible Playbooks
+-   [**Lesson 6**](./training/lesson06/README.md) - Ansible Variable
+-   [**Lesson 7**](./training/lesson07/README.md) - Ansible Facts
+-   [**Lesson 8**](./training/lesson08/README.md) - Ansible Vault
+-   [**Lesson 9**](./training/lesson09/README.md) - Ansible Conditionals, loops and delegation
+-   [**Lesson 10**](./training/lesson10/README.md) - Ansible Handlers
+-   [**Lesson 11**](./training/lesson11/README.md) - Ansible Templates
+-   [**Lesson 12**](./training/lesson12/README.md) - Ansible Roles
+-   [**Lesson 13**](./training/lesson13/README.md) - Ansible Filters
+-   [**Lesson 14**](./training/lesson14/README.md) - Ansible Modules
+-   [**Lesson 15**](./training/lesson15/README.md) - Ansible Lookups, Callbacks & Tags
 
 Red Hat Ansible Tower Lessons
 ---------
 
 Training folder includes The following list includes a lessons summary:
 
--   **Lesson 1** - Install Ansible Tower
--   **Lesson 2** - Credentials
--   **Lesson 3** - Projects
--   **Lesson 4** - Inventories
--   **Lesson 5** - Job Templates
--   **Lesson 6** - Workflow Templates
--   **Lesson 7** - Ansible Tower Role Based Access Control
--   **Lesson 8** - Emulate a Real Ansible Tower Project (Bonus)
+-   [**Lesson 1**](./training_tower/lesson01/README.md) - Install Ansible Tower
+-   [**Lesson 2**](./training_tower/lesson02/README.md) - Credentials
+-   [**Lesson 3**](./training_tower/lesson03/README.md) - Projects
+-   [**Lesson 4**](./training_tower/lesson04/README.md) - Inventories
+-   [**Lesson 5**](./training_tower/lesson05/README.md) - Job Templates
+-   [**Lesson 6**](./training_tower/lesson06/README.md) - Workflow Templates
+-   [**Lesson 7**](./training_tower/lesson07/README.md) - Ansible Tower Role Based Access Control
+-   [**Lesson 8**](./training_tower/lesson08/README.md) - Emulate a Real Ansible Tower Project (Bonus)
+
+Red Hat Automation Platform & Microsoft Training
+---------
+
+Please, visit [**Red Hat Automation Platform & Microsoft Training**](./training_microsoft/README.md) to access this training.
 
 
 License
