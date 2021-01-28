@@ -1,0 +1,36 @@
+- name: '[VMWARE][CREATE-VM] Create VM on VMWARE'
+  vmware_guest:
+    hostname: "{{ vmware_srv }}"
+    username: "{{ vmware_user }}"
+    password: "{{ vmware_pass }}"
+    validate_certs: False
+    folder: "{{ vmware_folder }}"
+    name: "{{ vm_name }}"
+    template: "{{ vmware_template }}"
+    datacenter: "{{ vmware_dc }}"
+    state: poweredon
+    esxi_hostname: "{{ vmware_esxi }}"
+    disk:
+    - size_gb: 50
+      type: thin
+      datastore: "{{ vmware_datastore }}"
+    - size_gb: 50
+      type: thin
+      datastore: "{{ vmware_datastore }}"
+    # hardware:
+    #   memory_mb: 512
+    #   num_cpus: 4
+    #   scsi: paravirtual
+    # networks:
+    # - name: VM Network
+    #   mac: aa:bb:dd:aa:00:14
+    #   ip: 10.10.10.100
+    #   netmask: 255.255.255.0
+    #   device_type: vmxnet3
+    #guest_id: rhel7_64Guest
+    #wait_for_ip_address: yes
+  register: deploy_vm
+
+- debug:
+    var: deploy_vm
+    verbosity: 1

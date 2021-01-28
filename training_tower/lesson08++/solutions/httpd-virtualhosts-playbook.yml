@@ -1,0 +1,39 @@
+- hosts: all
+  become: true
+
+  vars:
+    virtualhost_ports:
+      - 80
+      - 81
+  
+  tasks:
+
+    - name: Create service directories
+      file:
+        path: /var/www/html/service-{{ item }}
+        state: directory
+      loop: "{{ virtualhost_ports }}"
+
+    - name: Add virtualhost configuration file
+      template: 
+        src: virtualhost.conf.j2
+        dest: "/etc/httpd/conf.d/service-{{ item }}.conf"
+      loop: "{{ virtualhost_ports }}"
+      notify: Restart httpd service
+
+    - name: Modify httpd.conf file
+      lineinfile: 
+        path: /etc/httpd/conf/httpd.conf
+        line: "Listen {{ item }}"
+        backup: true
+      loop: "{{ virtualhost_ports }}"
+      notify: Restart httpd service
+
+  handlers:
+  
+    - name: Restart httpd service
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes
+ 

@@ -1,0 +1,5 @@
+- hosts: all
+  gather_facts: false
+  tasks:
+    - fail: 
+        msg: "Throw an intentional error"

@@ -1,0 +1,19 @@
+---
+galaxy_info:
+  author: Asier Cidon
+  description: VMWare manage role
+  company: Red Hat
+
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: Red Hat Enterprise Linux
+    versions:
+    - 7.5
+
+  galaxy_tags: []
+
+dependencies: []
+

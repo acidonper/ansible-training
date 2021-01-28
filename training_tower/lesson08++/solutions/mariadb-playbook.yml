@@ -1,0 +1,21 @@
+- hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    paquete: mariadb-server
+
+  tasks:
+    - name: Install mariadb-server
+      package:
+        name: mariadb-server
+        state: latest
+      notify: Restart mariadb-server service
+  
+  handlers:
+  
+    - name: Restart mariadb-server service
+      service:
+        name: mariadb
+        state: restarted
+        enabled: yes

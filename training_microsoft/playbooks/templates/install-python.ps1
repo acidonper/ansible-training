@@ -1,0 +1,1 @@
+C:\\Users\\{{ azure_win_username }}\\Desktop\\python-3.7.0.exe /quiet InstallAllUsers=0 PrependPath=1 Include_test=0

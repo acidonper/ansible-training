@@ -9,7 +9,7 @@ In order to understand this lesson properly, a set of steps have been designed t
 ## Steps 
 
 - Execute different Ansible Ad-Hoc Commands in order to achieve the following objectives:
-    * Debug "It is working" message on localhost
+    * Print "It is working" message on localhost
     * Print instance settings on localhost
     * Create a new user "yourname" on localhost using become (root)
     * Include the new user "yourname" on **wheel** group on localhost using become (root)
@@ -33,3 +33,4 @@ Author Information
  Asier Cidon - Cloud Consultant
 
  asier.cidon@redhat.com
+ 

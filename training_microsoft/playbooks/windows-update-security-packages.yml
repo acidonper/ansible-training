@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+
+    - name: Install all security updates without a scheduled task
+      ansible.windows.win_updates:
+        category_names:
+          - SecurityUpdates
+      register: update_process
+
+
+    - name: Print output
+      debug:
+        var: update_process

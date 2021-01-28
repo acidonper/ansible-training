@@ -1,0 +1,25 @@
+---
+- name: "[VMWARE][MANAGE-VM] Set VM state to Stopped"
+  set_fact:
+      status: "powered-off"
+  when: "vm_state == 'stopped'"
+
+- name: "[VMWARE][MANAGE-VM] Set VM state to Started"
+  set_fact:
+      status: "powered-on"
+  when: "vm_state == 'running'"
+
+- name: "[VMWARE][MANAGE-VM] Manage VM status"
+  vmware_guest_powerstate:
+      hostname: "{{ vmware_srv }}"
+      username: "{{ vmware_user }}"
+      password: "{{ vmware_pass }}"
+      folder: "{{ vmware_folder }}"
+      name: "{{ vm_name }}"
+      state: "{{ status }}"
+      validate_certs: no
+  register: vmware_guest_status
+
+- debug:
+      var: vmware_guest_status
+      verbosity: 1

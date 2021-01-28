@@ -8,8 +8,11 @@ From an overall point of view, this new project has to implement the folowing ta
 -   Install mariadb
 -   Up and Enable mariadb service
 -   Install httpd
+-   Up and Enable httpd service
+
+**BONUS**
+
 -   Configure httpd in order to create two new virtualHosts in ports (80 and 81)
--   Up and Enable mariadb service
 -   Create dynamically web pages in Apache folders
 
 ## Prerequisites
@@ -79,7 +82,7 @@ On the other hand, it is necessary to develop a set of new playbooks in order to
 -   Introduce "httpd-virtualhosts-playbook.yml"
 -   The playbook should use tasks to ensure that the following conditions are met on the managed hosts (*using become):
     -   "Hosts" has to be defined to "all"
-    -   Implement a new task which has to be able to create a set of virtualhost provided by a new variable named "virtualhost_ports" (80 and 81 by default)
+    -   Implement a new task which has to be able to create a set of virtualhosts provided by a new variable named "virtualhost_ports" (80 and 81) in /var/www/html/service-``<port>`` folders
 -   Click on "Commit new file" 
 -   Click on "Create new file"
 -   Introduce "httpd-content-playbook.yml"
@@ -88,7 +91,7 @@ On the other hand, it is necessary to develop a set of new playbooks in order to
     -   Implement a new task which has to be able to obtain the number of ports httpd is listening
     -   Create a new file named "index.html" in each virtualhost's default folder including the virtualhost's port number (Find and example in ./examples/index.html)
     -   Create a new file named "info.php" in each virtualhost's default folder which displays php info page
-    -   Create a new file named "information.php" in each virtualhost's default folder including the following information:
+    -   Create a new file named "information.html" in each virtualhost's default folder including some information ((Find and example in ./examples/information.html)
 -   Click on "Commit new file" 
 
 ## Important
@@ -141,6 +144,7 @@ Firstly, it is necessary to create a new "Job Template" for each new playbook in
 Now is the time to integrate all Job Templates. For this reason, it is necessary to create a new Workflow Template and add all Job Templated created in order to:
 
 -   Create five new users (``<studentxx>``-user01...``<studentxx>``-user05)
+-   Execute fail-playbook.yml Job Template
 -   Install/configure ntp server (us.pool.ntp.org)
 -   Install mysql server
 -   Restart mysql server
@@ -177,7 +181,9 @@ To achieve this objective, it will also necessary to include all Job Templates c
 -   Click on CONFIRM
 -   **Select in RUN field ->  On Failure**
 -   Click on SELECT
+
 ***Please repeate the following proceess wih the remaining Job Templates***
+
 -   Select [LESSON08] ``<studentxx>`` Job Template ``<playbook_name>.yml``
 -   Click on PROMPT (* If it is required)
 -   Introduce a new value (* If it is required)
@@ -185,6 +191,7 @@ To achieve this objective, it will also necessary to include all Job Templates c
 -   Click on CONFIRM (* If it is required)
 -   Click on SELECT
 ...
+
 -   Click on SAVE
 -   Execute the new Workflow Template!!
 

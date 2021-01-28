@@ -1,0 +1,14 @@
+- hosts: localhost
+  connection: local
+  tasks:
+
+    - name: Create (or update) MySQL Database
+      azure.azcollection.azure_rm_mysqldatabase:
+        resource_group: "{{ azure_resource_group }}"
+        server_name: ansibletraining
+        name: "{{ sql_database }}"
+      register: create_db_output
+    
+    - name: Print Debug
+      debug:
+        var: create_db_output

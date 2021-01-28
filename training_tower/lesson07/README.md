@@ -8,8 +8,8 @@
     -   ``<studentxx>``-developer03
     -   ``<studentxx>``-developer04
 - Create the following teams:
-    -   teamdevelopers
-    -   teamoperators
+    -   ``<studentxx>``-teamdevelopers
+    -   ``<studentxx>``-teamoperators
 
 ## Steps
 

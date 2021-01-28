@@ -1,0 +1,18 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My new virtualhost site {{ item | regex_search('[0-99999]{1,5}') }}</title>
+    <h1>{{ ansible_fqdn }}</h1>
+    <p>{{ ansible_distribution }} {{ ansible_distribution_major_version }}</p>
+    <p>Kernel version: {{ ansible_kernel }}</p>
+    <p>vcpus: {{ ansible_processor_vcpus }} </p>
+    <p>Memory: {{ ansible_memfree_mb }}</p>
+    <p>IPv4: {{ ansible_default_ipv4.address }}</p>
+    <p>Mac Address: {{ ansible_default_ipv4.macaddress }}</p>
+</head>
+<body>
+   
+</body>
+</html>

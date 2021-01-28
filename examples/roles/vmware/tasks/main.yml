@@ -1,0 +1,22 @@
+---
+# tasks file for roles/vmware
+#
+
+
+- block:
+    - import_tasks: find-vm.yml
+    - import_tasks: create-snapshot.yml
+  when: "action == 'create-snapshot'"
+
+- block:
+    - import_tasks: find-vm.yml
+    - import_tasks: manage-vm.yml
+  when: "action == 'manage-vm'"
+
+- block:
+    - import_tasks: find-vm.yml
+  when: "action == 'find-vm'"
+
+- block:
+    - import_tasks: create-vm.yml
+  when: "action == 'create-vm'"

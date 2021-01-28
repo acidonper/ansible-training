@@ -1,0 +1,34 @@
+- hosts: all
+  become: true
+  gather_facts: false
+
+  vars:
+    packages:
+      - httpd
+      - php
+
+  tasks:
+    - name: Install httpd
+      package:
+        name: httpd
+        state: latest
+      loop: "{{ packages }}"
+      notify: Restart httpd service
+
+    - name: Create index.html
+      copy:
+        content: "Welcome to {{ ansible_host }}"
+        dest: /var/www/html/index.html
+
+    - name: Create info.php
+      copy:
+        content: "<?php phpinfo(); ?>"
+        dest: /var/www/html/info.php
+  
+  handlers:
+  
+    - name: Restart httpd service
+      service:
+        name: httpd
+        state: restarted
+        enabled: yes

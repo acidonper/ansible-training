@@ -2,55 +2,51 @@
 # Example: ansible-playbook -i inventory handlers-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
-  
-  vars:
-    - packages_fail:
-        - apache
-        - php
-    - packages_ok:
-        - httpd
-        - php
 
   tasks:
 
     - block:
 
-      - name: Install Apache Packages
-        package:
-          name: "{{ item }}"
-          state: present
-        loop: "{{ packages_fail }}"
-        notify: Restart httpd service
+        - name: Install apache2 package
+          package:
+            name: apache2
+            state: present
+          notify: Restart httpd service
 
       rescue:
 
-      - name: Install Apache Packages
-        package:
-          name: "{{ item }}"
-          state: present
-        loop: "{{ packages_ok }}"
-        notify: Restart httpd service
+        - name: Install httpd package
+          package:
+            name: httpd
+            state: present
+          notify: Restart httpd service
 
       always:
 
-      - name: "Create custom fact directory"
-        file:
-          path: "/var/www/html/php"
-          state: directory
+        - name: Copy Apache config file
+          copy:
+            src: httpd.conf
+            dest: /etc/httpd/httpd.conf
+          notify: Restart httpd service
 
-      - name: Copy Apache config file
-        copy:
-          src: httpd.conf
-          dest: /etc/httpd/conf/httpd.conf
-        notify: Restart httpd service
+        - name: Install php package
+          package:
+            name: php
+            state: present
 
-      - name: Copy php web page file
-        copy:
-          src: index.php
-          dest: /var/www/html/php/index.php
+        - name: Create php directory under /var/www/html
+          file:
+            path: /var/www/html/php
+            state: directory
+
+        - name: Copy php web page file
+          copy:
+            src: index.php
+            dest: /var/www/html/php/index.php
 
   handlers:
 
@@ -58,3 +54,4 @@
       service:
         name: httpd
         state: restarted
+        enabled: yes

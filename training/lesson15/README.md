@@ -1,6 +1,6 @@
 # Ansible Lookups, Callbacks & Tags
 
-Lookup plugins allow Ansible to access data from outside sources. This can include reading the lesystem in addition to contacting external datastores and services. Like all templating, these plugins are evaluated on the Ansible control machine, not on the target/remote.
+Lookup plugins allow Ansible to access data from outside sources. This can include reading the filesystem in addition to contacting external datastores and services. Like all templating, these plugins are evaluated on the Ansible control machine, not on the target/remote.
 
 Callback plugins enable adding new behaviors to Ansible when responding to events. By default, callback plugins control most of the output you see when running the command line programs, but can also be used to add additional output, integrate with other tools and marshall the events to a storage backend.
 
@@ -33,14 +33,14 @@ In order to assist this laboratory implementation, a set of resources have been 
 ## tags
 
 -   Create an inventory file named "inventory" with a group named "myinstance" and your internal instance IP assigned included
--   Copy playbook named "tags-playbook-template.yml" into "tags-playbook.yml" using "myinstance" as a hosts parameter and `<studentxx>` as a user. The playbook should use tasks to ensure that the following conditions are met on the managed hosts:
+-   Copy playbook named "tags-playbook-template.yml" into "tags-playbook.yml" using "myinstance" as a hosts parameter and `<studentxx>` as a user. The playbook should use tags to ensure that the following conditions are met on the managed hosts:
     -   Tag tasks 1 and 2 as "debug" 
     -   Tag task 3 as "user"
     -   Tag tasks 4 and 5 as "apache"
 -   Before running your playbook, run the ansible-playbook --syntax-check  command to verify that its syntax is correct
--   Run tags-playbook.yml with tag debug!
--   Run tags-playbook.yml with tag user!
--   Run tags-playbook.yml with tag apache!
+-   Run tags-playbook.yml with tag debug
+-   Run tags-playbook.yml with tag user
+-   Run tags-playbook.yml with tag apache
 
 ### callbacks
 
@@ -68,3 +68,4 @@ Author Information
  Asier Cidon - Cloud Consultant
 
  asier.cidon@redhat.com
+ 

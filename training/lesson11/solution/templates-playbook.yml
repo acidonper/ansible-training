@@ -2,56 +2,44 @@
 # Example: ansible-playbook -i inventory templates-playbook.yml -k -K
 ##
 
+---
 - hosts: myinstance
   become: true
   user: studentxx
 
   vars:
   - http_ports:
-      - 80
-      - 81
-      - 8008
-      - 8009
-      - 9000
+    - 80
+    - 81
+    - 8008
+    - 8009
+    - 9000
 
   tasks:
 
-    - name: '[BLOCK01] Install HTTP/PHP Packages'
-      block:
+    - name: Install httpd Package
+      package:
+        name: httpd
+        state: present
+      notify: Restart httpd service
 
-      - name: Install Apache Packages
-        package:
-          name: apache
-          state: present
-        notify: Restart httpd service
+    - name: Create new folders based on port number
+      file:
+        path: "/var/www/html/ansible-service-{{ item }}"
+        state: directory
+      loop: "{{ http_ports }}"
 
-      rescue:
+    - name: Copy index.html template
+      template:
+        src: index.html.j2
+        dest: "/var/www/html/ansible-service-{{ item }}/index.html"
+      loop: "{{ http_ports }}"
 
-      - name: Install Httpd Packages
-        package:
-          name: httpd
-          state: present
-        notify: Restart httpd service
-
-      always:
-
-      - name: "Create custom fact directory"
-        file:
-          path: "/var/www/html/ansible-service-{{ item }}"
-          state: directory
-        loop: "{{ http_ports }}"
-
-      - name: Copy Apache config file
-        template:
-          src: httpd.conf.j2
-          dest: /etc/httpd/conf/httpd.conf
-        notify: Restart httpd service
-
-      - name: Copy php web page file
-        template:
-          src: index.html.j2
-          dest: "/var/www/html/ansible-service-{{ item }}/index.html"
-        loop: "{{ http_ports }}"
+    - name: Copy Apache config file
+      template:
+        src: httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+      notify: Restart httpd service
 
   handlers:
 

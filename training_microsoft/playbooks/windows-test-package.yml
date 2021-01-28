@@ -1,0 +1,14 @@
+- hosts: all
+  tasks:
+
+    - name: Execute python version
+      win_shell: 'python --version'
+      register: output
+    
+    - name: Print final result
+      debug: 
+        var: output.stdout
+    
+    - name: Print windows VM facts
+      debug: 
+        var: ansible_facts

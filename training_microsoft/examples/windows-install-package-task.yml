@@ -1,0 +1,5 @@
+- name: Install the Visual C++ Redistributable 2010
+  win_package:
+    path: https://ansiblefest2020blob.blob.core.windows.net/ansiblefest2020/vcredist_2010_x86.exe
+    product_id: '{196BB40D-1578-3D01-B289-BEFC77A11A1E}'
+    arguments: /install /passive /norestart

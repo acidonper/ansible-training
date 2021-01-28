@@ -1,0 +1,17 @@
+- name: '[VMWARE][CREATE-SNAPSHOT] Create snapshot VM'
+  vmware_guest_snapshot:
+    hostname: "{{ vmware_srv }}"
+    username: "{{ vmware_user }}"
+    password: "{{ vmware_pass }}"
+    datacenter: "{{ vmware_dc }}"
+    folder: "{{ vmware_folder }}"
+    name: "{{ vm_name }}"
+    state: present
+    snapshot_name: "{{ snap_description }}" 
+    description: "{{ snap_description }}" 
+    validate_certs: no
+  register: vmware_snapshot
+
+- debug:
+    var: vmware_snapshot
+    verbosity: 1
