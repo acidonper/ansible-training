@@ -15,7 +15,7 @@ fabric==2.5.0
 futures==3.3.0
 invoke==1.4.1
 ipaddress==1.0.23
-Jinja2==2.11.2
+Jinja2==2.11.3
 jmespath==0.10.0
 MarkupSafe==1.1.1
 paramiko==2.7.2
