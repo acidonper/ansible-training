@@ -399,7 +399,6 @@ instances:
       groups:
           - ssh_rule
           - http_rule
-          - app_rule
           - tower_cluster
 
     - name: ansibletower002
@@ -410,7 +409,6 @@ instances:
       groups:
           - ssh_rule
           - http_rule
-          - app_rule
           - tower_cluster
 
     - name: ansibletower003
@@ -421,7 +419,6 @@ instances:
       groups:
           - ssh_rule
           - http_rule
-          - app_rule
           - tower_cluster
 
     - name: ansibletowerdb001
