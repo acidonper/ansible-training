@@ -1,0 +1,11 @@
+---
+version: 1
+
+build_arg_defaults:
+        EE_BASE_IMAGE: 'registry.redhat.io/ansible-automation-platform-20-early-access/ee-supported-rhel8:2.0.1'
+        ANSIBLE_GALAXY_CLI_COLLECTION_OPTS: '--ignore-certs'
+
+ansible_config: 'ansible.cfg'
+
+dependencies:
+  galaxy: requirements.yml
