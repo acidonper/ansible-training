@@ -18,7 +18,7 @@ ipaddress==1.0.23
 Jinja2==2.11.2
 jmespath==0.10.0
 MarkupSafe==1.1.1
-paramiko==2.7.2
+paramiko==2.10.1
 passlib==1.7.2
 prettytable==0.7.2
 pyasn1==0.4.8
